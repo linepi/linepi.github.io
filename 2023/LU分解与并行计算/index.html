@@ -2,19 +2,29 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/github-markdown-light.css">
+		<style>
+			.markdown-body {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 45px;
+			}
+		
+			@media (max-width: 767px) {
+				.markdown-body {
+					padding: 15px;
+				}
+			}
+		</style>
     <title>Lemonorn Blog</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
-	<div class="post-details">
-		<div class="post-title">
-				<h1>LU分解与并行计算</h1>
-		</div>
-		<div class="post-content">
-				<ul>
-<li></li>
-</ul>
-<span id="more"></span>
+	<article class="markdown-body">
+		<h1>LU分解与并行计算</h1>
+		<span id="more"></span>
 
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在线性代数与数值分析中，LU分解是矩阵分解的一种，将一个矩阵分解为一个下三角矩阵和一个上三角矩阵的乘积，有时需要再乘上一个置换矩阵。LU分解可以被视为高斯消元法的矩阵形式。在数值计算上，LU分解经常被用来解线性方程组、且在求逆矩阵和计算行列式中都是一个关键的步骤。</p>
 <p>LU矩阵分解是一种常用的矩阵分解方法，用于将一个矩阵分解为一个下三角矩阵L和一个上三角矩阵U的乘积。其原理可以简述如下：</p>
@@ -55,25 +65,25 @@
 <p>通过优化代码，我们能够更好地利用计算资源，提高程序的性能。这对于需要处理大规模数据和复杂计算任务的应用程序尤为重要。然而，要确保正确性，我们需要仔细考虑并行化操作对数据一致性的影响，并确保适当的同步机制和数据访问策略。</p>
 <p>通过合理地使用并行化技术，我们可以显著提高程序的运行速度，从而更高效地完成计算任务。这为处理大规模数据和复杂计算问题的应用程序提供了有力的工具，促进了科学研究和工程实践的发展。</p>
 
-		</div>
+	</article>
 	</div>
-	<script src="https://utteranc.es/client.js"
-        repo="https://github.com/linepi/linepi.github.io"
-        issue-term="title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-	</script>
 	<!-- Footer -->
 	<footer class="site-footer">
-			<div class="container">
-					<div class="footer-content">
-							<p>© 2023 Lemonorn. All rights reserved.</p>
-							<nav class="footer-links">
-									<a target="_blank" rel="noopener" href="https://github.com/linepi">My Github</a>
-							</nav>
-					</div>
-			</div>
+		<div class="container">
+				<div class="footer-content">
+						<p>© 2023 Lemonorn. All rights reserved.</p>
+						<nav class="footer-links">
+								<a target="_blank" rel="noopener" href="https://github.com/linepi">My Github</a>
+						</nav>
+				</div>
+		</div>
 	</footer>
 </body>
+<script src="https://utteranc.es/client.js"
+	repo="https://github.com/linepi/linepi.github.io"
+	issue-term="title"
+	theme="github-light"
+	crossorigin="anonymous"
+	async>
+</script>
 </html>
