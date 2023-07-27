@@ -1,0 +1,39 @@
+/* styles.css */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.site-footer {
+	background-color: #f1f1f1; /* Change background color to light gray */
+	color: #333; /* Change text color to dark gray */
+	margin-top: auto; /* Move the footer to the bottom using Flexbox */
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-links a {
+	color: #333; /* Change link color to dark gray */
+	text-decoration: none;
+	/* Remove margin-right and transition styles */
+}
+
+/* Add hover style for links (optional) */
+.footer-links a:hover {
+	text-decoration: underline;
+	color: #555; /* Change link color when hovered */
+}
