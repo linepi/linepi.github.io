@@ -1,89 +1,827 @@
+<!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <link rel="stylesheet" href="/footer.css">
-    <link rel="stylesheet" href="/github-markdown-light.css">
-		<style>
-			.markdown-body {
-				box-sizing: border-box;
-				min-width: 200px;
-				max-width: 980px;
-				margin: 0 auto;
-				padding: 45px;
-			}
-		
-			@media (max-width: 767px) {
-				.markdown-body {
-					padding: 15px;
-				}
-			}
-		</style>
-    <title>Lemonorn Blog</title>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+	-webkit-appearance: button;
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+	opacity: 1;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+.export-detail, .light .export-detail, 
+.light .export-item.active, 
+.light .export-items-list-control {
+	background: #e0e0e0;
+	border-radius: 2px;
+	font-weight: 700;
+	color: inherit
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>index</title>
+<link rel="stylesheet" href="/footer.css">
 <meta name="generator" content="Hexo 6.3.0"></head>
-<body>
-	<article class="markdown-body">
-		<h1>LU分解与并行计算</h1>
-		<span id="more"></span>
-
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在线性代数与数值分析中，LU分解是矩阵分解的一种，将一个矩阵分解为一个下三角矩阵和一个上三角矩阵的乘积，有时需要再乘上一个置换矩阵。LU分解可以被视为高斯消元法的矩阵形式。在数值计算上，LU分解经常被用来解线性方程组、且在求逆矩阵和计算行列式中都是一个关键的步骤。</p>
-<p>LU矩阵分解是一种常用的矩阵分解方法，用于将一个矩阵分解为一个下三角矩阵L和一个上三角矩阵U的乘积。其原理可以简述如下：</p>
-<p>给定一个n×n的矩阵A，LU分解的目标是找到两个矩阵L和U，使得A &#x3D; LU。</p>
-<ol>
-<li><p>首先，我们将矩阵A写成如下形式：</p>
-<p>A &#x3D; [a11  a12  a13 …  a1n]<br>[a21  a22  a23 …  a2n]<br>[a31  a32  a33 …  a3n]<br>[…   …   … …   …]<br>[an1  an2  an3 …  ann]</p>
-</li>
-<li><p>然后，我们通过消元的方式将A分解为L和U。消元过程可以理解为对A进行一系列的行变换，使得A的下三角部分变为0，而上三角部分保持原样。在每一次消元操作中，我们选择一个主元（通常是矩阵的对角线元素），并用它来消除矩阵的其他元素。</p>
-</li>
-<li><p>消元的过程中，我们通过一系列的行变换将A变换为U，其中U是一个上三角矩阵。行变换包括以下步骤：选择一个主元，将主元所在列的下方元素消为0，重复这个过程直到得到上三角矩阵U。</p>
-</li>
-<li><p>在消元的过程中，我们记录下所做的行变换，并将其应用到一个单位下三角矩阵上，得到矩阵L。L是一个下三角矩阵，其对角线元素为1。</p>
-</li>
-<li><p>最终，我们得到了矩阵A的LU分解，即A &#x3D; LU，其中L是一个下三角矩阵，U是一个上三角矩阵。</p>
-</li>
-</ol>
-<p>LU矩阵分解的主要优点是可以减少求解线性方程组的计算量，特别是在需要多次求解相同系数矩阵的线性方程组时。通过LU分解，我们可以将原始的线性方程组转化为两个较简单的方程组，从而更高效地求解解析解或进行数值计算。</p>
-<p>接下来，我们用算法来描述这一过程。我们将其分为串行算法和并行算法。介绍完后，我们会比较它们的性能，并在此基础上进行分析。</p>
-<h2 id="串行算法思路"><a href="#串行算法思路" class="headerlink" title="串行算法思路"></a>串行算法思路</h2><p>对于一个 n 阶非奇异方阵 A&#x3D;[a<del>ij</del>]，对 A 进行 LU 分解是求一个主对角元素全为 1 的下三 角方阵 L&#x3D;[l<del>ij</del>]与上三角方阵 U&#x3D;[u<del>ij</del>]，使 A&#x3D;LU。设 A 的各阶主子行列式皆非零，U 和 L 的元 素可由下面的递推式求出：</p>
-<p>在计算过程中，首先计算出 U 的第一行元素，然后算出 L 的第一列元素，修改相应 A 的元素；再算出 U 的第二行，L 的第二列…，直至算出 u<del>nn</del> 为止。若一次乘法和加法运算或 一次除法运算时间为一个单位时间，则下述 LU 分解的串行算法时间复杂度为O(n^3^):</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">void luDecomposition(double** a, double** l, double** u, int n) &#123;</span><br><span class="line">    /*</span><br><span class="line">     * LU分解函数</span><br><span class="line">     * 参数:</span><br><span class="line">     *   - a: 输入矩阵，n×n的二维数组</span><br><span class="line">     *   - l: 下三角矩阵，n×n的二维数组，作为输出参数</span><br><span class="line">     *   - u: 上三角矩阵，n×n的二维数组，作为输出参数</span><br><span class="line">     *   - n: 矩阵的维度</span><br><span class="line">     */</span><br><span class="line">    </span><br><span class="line">    // LU分解的第一步：计算下三角矩阵L和上三角矩阵U</span><br><span class="line">    for (int k = 0; k &lt; n; k++) &#123;</span><br><span class="line">        // 计算下三角矩阵L的第k列（不包括对角线元素）</span><br><span class="line">        for (int i = k + 1; i &lt; n; i++) &#123;</span><br><span class="line">            a[i][k] = a[i][k] / a[k][k];  // 计算L的元素值</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        // 计算上三角矩阵U的第k行和第k列（包括对角线元素）</span><br><span class="line">        for (int i = k + 1; i &lt; n; i++) &#123;</span><br><span class="line">            for (int j = k + 1; j &lt; n; j++) &#123;</span><br><span class="line">                a[i][j] = a[i][j] - a[i][k] * a[k][j];  // 计算U的元素值</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // 构建下三角矩阵L和上三角矩阵U</span><br><span class="line">    for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">        for (int j = 0; j &lt; n; j++) &#123;</span><br><span class="line">            if (j &lt; i) &#123;</span><br><span class="line">                l[i][j] = a[i][j];  // L的元素值为a中对应位置的值</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                u[i][j] = a[i][j];  // U的元素值为a中对应位置的值</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        l[i][i] = 1.0;  // L的对角线元素为1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="并行算法思路"><a href="#并行算法思路" class="headerlink" title="并行算法思路"></a>并行算法思路</h2><h3 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h3><p>我们使用OpenMP来进行并行化计算</p>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>在 LU 分解的过程中，主要的计算是利用主行 i 对其余各行 j，(j&gt;i)作初等行变换，各行 计算之间没有数据相关关系，因此可以对矩阵 A 按行划分来实现并行计算。考虑到在计算 过程中处理器之间的负载均衡，对 A 采用行交叉划分：设处理器个数为 p，矩阵 A 的阶数为 n，m &#x3D; n &#x2F; p，对矩阵 A 行交叉划分后，编号为 i(i&#x3D;0,1,…,p-1)的处理器存有 A 的第 i, i+p,…, i+(m-1)p 行。然后依次以第 0,1,…,n-1 行作为主行，将其广播给所有处理器，各处理器利用 主行对其部分行向量做行变换，这实际上是各处理器轮流选出主行并广播。若以编号为 my_rank 的处理器的第 i 行元素作为主行，并将它广播给所有处理器，则编号大于等于 my_rank 的处理器利用主行元素对其第 i+1,…,m-1 行数据做行变换，其它处理器利用主行元 素对其第 i,…,m-1 行数据做行变换。具体并行算法框架描述如下：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">void luDecomposition(double *a, double *l, double *u, int n) &#123;</span><br><span class="line">  /*</span><br><span class="line">   * LU分解函数</span><br><span class="line">   * 参数:</span><br><span class="line">   *   - a: 输入矩阵，n×n的一维数组表示</span><br><span class="line">   *   - l: 下三角矩阵，n×n的一维数组表示，作为输出参数</span><br><span class="line">   *   - u: 上三角矩阵，n×n的一维数组表示，作为输出参数</span><br><span class="line">   *   - n: 矩阵的维度</span><br><span class="line">   */</span><br><span class="line">  double *a_copy = malloc(sizeof(double) * n * n);</span><br><span class="line">  memcpy(a_copy, a, sizeof(double) * n * n);</span><br><span class="line"></span><br><span class="line">  // LU分解的第一步：计算下三角矩阵L和上三角矩阵U</span><br><span class="line">  for (int k = 0; k &lt; n; k++) &#123;</span><br><span class="line">    // 计算下三角矩阵L的第k列（不包括对角线元素）</span><br><span class="line">    for (int i = k + 1; i &lt; n; i++) &#123;</span><br><span class="line">      a[i * n + k] = a[i * n + k] / a[k * n + k]; // 计算L的元素值</span><br><span class="line">    &#125;</span><br><span class="line">    // 计算上三角矩阵U的第k行和第k列（包括对角线元素）</span><br><span class="line">    for (int i = k + 1; i &lt; n; i++) &#123;</span><br><span class="line">      for (int j = k + 1; j &lt; n; j++) &#123;</span><br><span class="line">        a[i * n + j] =</span><br><span class="line">            a[i * n + j] - a[i * n + k] * a[k * n + j]; // 计算U的元素值</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 构建下三角矩阵L和上三角矩阵U</span><br><span class="line">  #pragma omp parallel for</span><br><span class="line">  for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">    #pragma omp parallel for</span><br><span class="line">    for (int j = 0; j &lt; n; j++) &#123;</span><br><span class="line">      if (j &lt; i) &#123;</span><br><span class="line">        l[i * n + j] = a[i * n + j]; // L的元素值为a中对应位置的值</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        u[i * n + j] = a[i * n + j]; // U的元素值为a中对应位置的值</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    l[i * n + i] = 1.0; // L的对角线元素为1</span><br><span class="line">  &#125;</span><br><span class="line">  memcpy(a, a_copy, sizeof(double) * n * n);</span><br><span class="line">  free(a_copy);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="计时框架"><a href="#计时框架" class="headerlink" title="计时框架"></a>计时框架</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">int main() &#123;</span><br><span class="line">  srand(time(0));</span><br><span class="line">  int batchSize = 100;  // 测试批量大小</span><br><span class="line">  int n = 200;             // 矩阵维度</span><br><span class="line"></span><br><span class="line">  clock_t whole_time = 0;</span><br><span class="line"></span><br><span class="line">  for (int batch = 0; batch &lt; batchSize; batch++) &#123;</span><br><span class="line">    // 生成随机矩阵A</span><br><span class="line">    double* a = (double*)calloc(n * n, sizeof(double));</span><br><span class="line">    double* l = (double*)malloc(n * n * sizeof(double));</span><br><span class="line">    double* u = (double*)malloc(n * n * sizeof(double));</span><br><span class="line">    for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">      int row = i / n;</span><br><span class="line">      int col = i % n;</span><br><span class="line">      l[i] = rand() % 1000 + 1;  // 生成0到99之间的随机数</span><br><span class="line">      u[i] = rand() % 1000 + 1;  // 生成0到99之间的随机数</span><br><span class="line">      if (row == col) l[i] = 1;</span><br><span class="line">      if (row &lt; col) l[i] = 0;</span><br><span class="line">      if (row &gt; col) u[i] = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    for (size_t i = 0; i &lt; n; i++) &#123;</span><br><span class="line">      for (size_t j = 0; j &lt; n; j++) &#123;</span><br><span class="line">        for (size_t k = 0; k &lt; n; k++) &#123;</span><br><span class="line">          a[i * n + j] += l[i * n + k] * u[k * n + j];</span><br><span class="line">        &#125; </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // 分配内存存储结果矩阵L和U</span><br><span class="line">    // 进行LU分解</span><br><span class="line">    clock_t lu_start_time = clock();</span><br><span class="line">    // 真正的运算地方</span><br><span class="line">    luDecomposition(a, l, u, n);</span><br><span class="line">    clock_t lu_end_time = clock();</span><br><span class="line">    whole_time += lu_end_time - lu_start_time;</span><br><span class="line">    // 检验分解是否正确，如果不正确，算法也就失去了意义</span><br><span class="line">    assert(verifyLU(a, l, u, n));</span><br><span class="line">    // 释放内存</span><br><span class="line">    free(a);</span><br><span class="line">    free(l);</span><br><span class="line">    free(u);</span><br><span class="line">  &#125;</span><br><span class="line">  printf(&quot;whole lu time: %lf seconds\n&quot;, 1.0 * whole_time / CLOCKS_PER_SEC);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="结果分析与比较"><a href="#结果分析与比较" class="headerlink" title="结果分析与比较"></a>结果分析与比较</h2><p>经过一番运行，我们发现运行耗时减少了不少：</p>
-<p>优化后的代码通过使用OpenMP并行化指令，将计算下三角矩阵L和上三角矩阵U的过程并行化，从而显著提高了运行速度。通过在并行区域内使用独立的<code>#pragma omp for</code>指令，我们成功解决了原始代码中嵌套并行指令的问题。</p>
-<p>通过并行化循环，我们能够利用多个线程同时执行迭代操作，充分发挥多核处理器的计算能力。这种优化特别适用于具有大规模矩阵的LU分解操作，因为并行化可以将计算负载分配给多个处理单元，从而加速计算过程。</p>
-<p>需要注意的是，在使用OpenMP并行化指令时，我们需要考虑共享数据的访问和可能的竞态条件。如果多个线程同时访问和修改相同的数据，可能会导致错误的结果。在本例中，通过将<code>#pragma omp parallel</code>放置在两个独立的<code>#pragma omp for</code>之外，我们确保了每个线程独立地访问和修改数据，避免了竞态条件的问题。</p>
-<p>通过优化代码，我们能够更好地利用计算资源，提高程序的性能。这对于需要处理大规模数据和复杂计算任务的应用程序尤为重要。然而，要确保正确性，我们需要仔细考虑并行化操作对数据一致性的影响，并确保适当的同步机制和数据访问策略。</p>
-<p>通过合理地使用并行化技术，我们可以显著提高程序的运行速度，从而更高效地完成计算任务。这为处理大规模数据和复杂计算问题的应用程序提供了有力的工具，促进了科学研究和工程实践的发展。</p>
-
-	</article>
+<body class='typora-export'>
+<div class='typora-export-content'>
+	<div id='write'  class=''>
+		<h2 id='im-lemonorn-good-to-see-you-😆'><span>I&#39;m Lemonorn, Good to see you~ 😆</span></h2>
+		<h3 id='3月21日'><a href='/3月21日.html'><span>3月21日</span></a></h3>
+		<h3 id='lu分解与并行计算'><a href='/LU分解与并行计算.html'><span>LU分解与并行计算</span></a></h3>
+		<h3 id='如何提问'><a href='/如何提问.html'><span>如何提问</span></a></h3>
+		<p>&nbsp;</p>
+ </div>
+</div>
+<footer class="site-footer">
+	<div class="container">
+			<div class="footer-content">
+					<p>© 2023 Lemonorn. All rights reserved.</p>
+					<nav class="footer-links">
+							<a target="_blank" rel="noopener" href="https://github.com/linepi">My Github</a>
+					</nav>
+			</div>
 	</div>
-	<!-- Footer -->
-	<footer class="site-footer">
-		<div class="container">
-				<div class="footer-content">
-						<p>© 2023 Lemonorn. All rights reserved.</p>
-						<nav class="footer-links">
-								<a target="_blank" rel="noopener" href="https://github.com/linepi">My Github</a>
-						</nav>
-				</div>
-		</div>
-	</footer>
+</footer>
 </body>
-<script src="https://utteranc.es/client.js"
-	repo="https://github.com/linepi/linepi.github.io"
-	issue-term="title"
-	theme="github-light"
-	crossorigin="anonymous"
-	async>
-</script>
 </html>
