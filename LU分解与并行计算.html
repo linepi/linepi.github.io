@@ -286,106 +286,136 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 
+/* roboto-300 - latin */
+/* roboto-300italic - latin */
+/* roboto-regular - latin */
+/* roboto-italic - latin */
+/* roboto-500 - latin */
+/* roboto-500italic - latin */
+/* roboto-700 - latin */
+/* roboto-700italic - latin */
+/* roboto-900 - latin */
+/* roboto-900italic - latin */
+/* sorucecodepro-400 - latin */
+@font-face {
+     font-family: 'Source Code Pro';
+     font-style: normal;
+     font-weight: 400;
+     src: local('Source Code Pro'), local('SourceCodePro-Regular'),
+     url('file:///Users/wu/Library/Application%20Support/abnerworks.Typora/themes/gitbook/SourceCodePro-Regular.ttf') format('truetype');
+}@import "";
 
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
-  margin: 0;
-  padding: 0;
+/*by 16soundsofsilence, yes this code is an absolute mess*/
+
+:root {
+    --bg-color: white;
+    --side-bar-bg-color: #f5f7f9;
+    --control-text-color: #3b454e;
+    --primary-color: #15ac8e;
+    --primary-btn-border-color: #15ac8e;
+    --active-file-bg-color: #e6ecf1;
+    --active-file-text-color: inherit;
+    --active-file-border-color: #15ac8e;
+    --item-hover-text-color: #242a31;
+    --item-hover-bg-color: #f5f7f9;
+    --window-border: 1px solid #e6ecf1;
+    --select-text-font-color: white;
+    --select-text-bg-color: #11977d;
+
+    --md-char-color: #9daab6;
+    --heading-char-color: #9daab6;
+    --meta-content-color: #15ac8e;
+
+    --borders: #e6ecf1;
+    --table-border-color: #e6ecf1;
+    --boxes: #f5f7f9;
+    --boxes-darker: #d8e0e7;
+    --boxes-darker2: #bac2c9;
+    --boxes-darkest: #9daab6;
+    --drag-placeholder-color: #d8e0e7;
+
+    --text-color: #3b454e;
+    --heading-text-color: #242a31;
+    --light-text-color: #9daab6;
+    --light-text-color-darker: #74818d;
+    --codeboxes: #183055;
+    --codeboxes-lighter: #1c375f;
+    --rawblock-edit-panel-bd: transparent;
+
+    --primary-color-darkest: #083d33;
+    --primary-color-darker2: #0d5748;
+    --primary-color-darker: #11977d;
+    --focus-ring-color: #15ac8e;
+
+    --danger-color: rgb(255, 70, 66);
+
+    --node-fill: #ececff;
+    --node-border: #ccccff;
+    --cluster-fill: #ffffde;
+    --cluster-border: #aaaa33;
+    --note-fill: #fff5ad;
+    --note-border: #aaaa33;
+
+    /*****************************/
+
+    --font-family: "Roboto", sans-serif;
+    --code-font-family: "Source Code Pro";
+    --monospace: "Source Code Pro";
 }
 
-body, button, input, select, textarea {
-  font: 12px/1.5tahoma, arial, 宋体;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-}
-
-address, cite, dfn, em, var {
-  font-style: normal;
-}
-
-code, kbd, pre, samp {
-  font-family: couriernew, courier, monospace;
-}
-
-small {
-  font-size: 12px;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-sup {
-  vertical-align: text-top;
-}
-
-sub {
-  vertical-align: text-bottom;
-}
-
-legend {
-  color: #000;
-}
-
-fieldset, img {
-  border: 0;
-}
-
-button, input, select, textarea {
-  font-size: 100%;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/*
-    Update default scroll-bar style.
-    More: https://ovirgo.com/posts/scroll-bar
-*/
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track-piece {
-  background-color: transparent;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  cursor: pointer;
-  background-color: #ccc;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #999;
-}
-
-::-webkit-scrollbar-corner {
-  display: block;
-}
-
-html {
-  scroll-behavior: smooth;
+html,
+.form-control,
+.modal {
+    font-size: 16px;
 }
 
 body {
-  color: #343a40;
-  font-family: jostFont, jinkaiFont, "kaiti", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 16px;
-  line-height: 1.5;
+    background: var(--bg-color);
+    font-family: var(--font-family);
+    font-weight: 400;
+    color: #3b454e;
+    line-height: 1.6rem;
+    height: 100%;
 }
 
-li::marker {
-  color: #ccc;
+#write {
+    font-size: 0.95rem;
+    max-width: 850px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 30px;
+    padding-bottom: 100px;
+    position: static;
+    width: 100%;
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none !important;
+    transition-duration: 0.2s;
+    transition-property: color;
+}
+
+a:hover {
+    color: var(--primary-color-darker);
+}
+
+mark a,
+mark .md-content.md-url {
+    color: var(--primary-color-darker2);
+}
+
+mark a:hover {
+    color: var(--primary-color-darkest);
+}
+
+.ty-preferences a {
+    color: var(--primary-color);
 }
 
 h1,
@@ -394,1068 +424,2386 @@ h3,
 h4,
 h5,
 h6 {
-  background: rgba(255, 255, 255, 0);
-  padding: 16px 0;
+    position: relative;
+    color: var(--heading-text-color);
+    cursor: text;
 }
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  display: inline-block;
-  margin: 4px;
-  font-size: 14px;
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
 }
-h1 code,
-h2 code,
-h3 code,
-h4 code,
-h5 code,
+
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+
+h6 tt,
 h6 code {
-  font-family: romanFont, jinkaiFont, "kaiti", sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: inherit;
 }
 
 h1 {
-  font-size: 32px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
+    border-bottom: solid 1px var(--borders);
 }
 
 h2 {
-  font-size: 28px;
-}
-h2:before {
-  content: "♪² ";
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 h3 {
-  font-size: 24px;
-}
-h3:before {
-  content: "♪³ ";
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 h4 {
-  font-size: 20px;
-}
-h4:before {
-  content: "♪⁴ ";
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 h5 {
-  font-size: 20px;
-}
-h5:before {
-  content: "♪⁵ ";
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 h6 {
-  font-size: 20px;
-}
-h6:before {
-  content: "♪⁶ ";
-}
-
-img {
-  max-width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0);
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-a {
-  color: #5d2f86;
-}
-a:hover {
-  text-decoration: none;
-  color: #e69;
-  text-shadow: 0px 0px 1px #e69;
+#write > h1.md-focus:before {
+    content: "h1";
+    top: 1.15rem;
+    left: -1.75rem;
 }
 
-p {
-  margin: 16px 0;
+#write > h2.md-focus:before {
+    content: "h2";
+    top: 0.75rem;
+    left: -1.75rem;
+}
+
+#write > h3.md-focus:before {
+    content: "h3";
+    top: 0.575rem;
+    left: -1.75rem;
+}
+
+#write > h4.md-focus:before {
+    content: "h4";
+    top: 0.4rem;
+    left: -1.75rem;
+}
+
+#write > h5.md-focus:before {
+    content: "h5";
+    top: 0.25rem;
+    left: -1.75rem;
+}
+
+#write > h6.md-focus:before {
+    content: "h6";
+    top: 0.25rem;
+    left: -1.75rem;
+}
+
+#write > h1.md-focus:before,
+#write > h2.md-focus:before,
+#write > h3.md-focus:before,
+#write > h4.md-focus:before,
+#write > h5.md-focus:before,
+#write > h6.md-focus:before {
+    color: var(--light-text-color);
+    border: none;
+    position: absolute;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0px;
+    line-height: 1;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child,
+blockquote h1,
+blockquote h2,
+blockquote h3,
+blockquote h4,
+blockquote h5,
+blockquote h6 {
+    margin-top: 0rem;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl {
+    margin: 0.5rem 0rem 1.5rem 0rem;
+}
+
+li > ol,
+li > ul {
+    margin: 0 0;
 }
 
 hr {
-  margin: 24px 0;
-  border-color: rgba(0, 0, 0, 0);
-  border-bottom-color: rgba(239, 239, 239, 0.5);
+    height: 1px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: var(--borders);
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
 }
 
-table {
-  margin: 24px 0;
-}
-table thead tr {
-  border-top: 2px solid #e9e7ef;
-}
-table tbody {
-  border-top: 2px solid #e9e7ef;
-}
-table tbody tr {
-  border-bottom: 1px solid #e9e7ef;
-}
-table tbody tr:last-child {
-  border-bottom: 2px solid #e9e7ef;
-}
-table th,
-table td {
-  padding: 3px 6px;
-  border-right: 1px solid #e9e7ef;
-}
-table th:first-child,
-table td:first-child {
-  border-left: rgba(255, 255, 255, 0);
-}
-table th:last-child,
-table td:last-child {
-  border-right: rgba(255, 255, 255, 0);
-}
-
-blockquote {
-  padding-left: 16px;
-  border-left: 1px solid #6c757d;
-  color: #6c757d;
-}
-
-.summary code,
-p code,
-td code,
-li code {
-  font-size: 14px;
-  font-family: romanFont, jinkaiFont, "kaiti", sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
-  color: #d63384;
-}
-
-pre,
-pre code {
-  font-family: romanFont, jinkaiFont, "kaiti", sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+li p.first {
+    display: inline-block;
 }
 
 ul,
 ol {
-  list-style-position: outside;
-  padding-left: 20px;
-  margin-bottom: 16px;
-}
-ul li p,
-ol li p {
-  margin: 0;
+    padding-left: 30px;
 }
 
-.some {
-  font-family: "Segoe Script", segoeFont;
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
 }
 
-h2 code,
-h3 code,
-h4 code,
-h5 code,
-h6 code,
-strong code,
-u code,
-em code,
-.oh-hl code,
-.oh-essay code {
-  color: #d63384;
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
 }
 
-.oh-essay {
-  position: relative;
-  margin: 16px auto;
-  padding-left: 16px;
-  border-left: 1px dashed #969696;
-  font-size: 15px;
-  color: #969696;
-}
-.oh-essay p {
-  margin-bottom: 0;
+.md-blockmeta {
+    color: var(--md-char-color);
 }
 
-.oh-hl {
-  background: #fef9e7;
-  padding: 0 4px;
-  border-radius: 4px;
+mark {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.2rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
 }
 
-body.active-animate {
-  -webkit-animation: fadeIn 2s;
-          animation: fadeIn 2s;
-}
-body.active-animate p {
-  -webkit-animation: slideInUp 0.6s;
-          animation: slideInUp 0.6s;
-}
-body.active-animate .container-home .menu .item {
-  -webkit-animation: slideInDown 1s;
-          animation: slideInDown 1s;
-}
-body.active-animate .container-home .content .desc {
-  -webkit-animation: slideInUp 1s;
-          animation: slideInUp 1s;
-}
-body.active-animate .container-nav .content-nav .nav ul {
-  -webkit-animation: slideInUp 1s;
-          animation: slideInUp 1s;
-}
-body.active-animate .container-search #search {
-  -webkit-animation: slideInLeft 1s;
-          animation: slideInLeft 1s;
-}
-body.active-animate .container-search .list .item {
-  -webkit-animation: slideInUp 1s;
-          animation: slideInUp 1s;
-}
-body.active-animate .container-list .list .recentf, body.active-animate .container-list .list .item {
-  -webkit-animation: slideInUp 1s;
-          animation: slideInUp 1s;
-}
-body.active-animate .container-archive .recentf .rec-post .rec-post-item {
-  -webkit-animation: slideInLeft 1s;
-          animation: slideInLeft 1s;
-}
-body.active-animate .container-archive .categories .arc-item,
-body.active-animate .container-archive .tags .arc-item {
-  -webkit-animation: slideInUp 1s;
-          animation: slideInUp 1s;
-}
-body.active-animate .container-archive .categories .arc-item .arc-post .arc-post-item,
-body.active-animate .container-archive .tags .arc-item .arc-post .arc-post-item {
-  -webkit-animation: slideInRight 1s;
-          animation: slideInRight 1s;
-}
-body.active-animate .container-page .toc .page-operation {
-  -webkit-animation: slideInLeft 1s;
-          animation: slideInLeft 1s;
+/*BLOCKQUOTE*/
+
+blockquote {
+    width: 100%;
+    background-color: var(--boxes);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0.3rem;
+    padding: 1rem;
+    border-right: 4px solid var(--boxes); /* removes arc with tiny blue color from top-right and bottom-right corner */
 }
 
-#header {
-  border-top: 4px solid;
-  border-image-source: linear-gradient(90deg, #0d6efd, #8ed6fb 50%, #d32e9d);
-  border-image-slice: 1;
-  -webkit-border-top: 4px solid;
-  -webkit-border-image-source: linear-gradient(90deg, #0d6efd, #8ed6fb 50%, #d32e9d);
-  -webkit-border-image-slice: 1;
-  z-index: 1000;
-  position: -webkit-sticky;
-  position: sticky;
-  top: -66px;
-  padding: 0 80px;
-}
-#header.js-header {
-  transition: 0.2s background-color linear;
-  background-color: rgba(255, 255, 255, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: saturate(180%) blur(5px);
-          backdrop-filter: saturate(180%) blur(5px);
-}
-#header .container-header .some {
-  position: relative;
-  padding: 4px 0px 6px 24px;
-}
-#header .container-header .some #light-dark {
-  cursor: pointer;
-  position: absolute;
-  left: 4px;
-  top: 4px;
-}
-#header .container-header .container-breadcrumb-nav {
-  padding-bottom: 8px;
-}
-#header .container-header .container-breadcrumb-nav .breadcrumb-nav-bar {
-  display: flex;
-  font-size: 12px;
-}
-#header .container-header .container-breadcrumb-nav .breadcrumb-nav-bar a {
-  white-space: break-spaces;
-  overflow: hidden;
-  height: 18px;
-  display: block;
-  color: rgba(90, 41, 228, 0.8);
-  background: rgba(239, 239, 239, 0.3);
-  margin-right: 8px;
-  padding: 4px 8px;
-  border-radius: 0 12px 0 8px;
-}
-#header .container-header .container-breadcrumb-nav .breadcrumb-nav-bar .active a {
-  color: #5a29e4;
-}
-#header .container-header #toc {
-  display: none;
+blockquote blockquote {
+    padding-right: 0;
 }
 
-#content {
-  background: rgba(255, 255, 255, 0);
-  padding: 16px 80px 32px;
-}
-#content .container-home {
-  font-family: "Segoe Script", segoeFont, jostFont, jinkaiFont, "kaiti", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-#content .container-home .menu {
-  height: 108px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  font-size: 14px;
-}
-#content .container-home .menu .item a {
-  display: block;
-  margin: 4px 8px;
-  padding: 8px;
-  width: 96px;
-  background: rgba(239, 239, 239, 0.4);
-  border-radius: 6px;
-  text-align: center;
-  transition: 0.3s padding ease;
-}
-#content .container-home .menu .item a:hover {
-  padding: 24px 8px;
-}
-#content .container-home .content-md {
-  padding-top: 24px;
-}
-#content .container-home .content-md p > code,
-#content .container-home .content-md li > code,
-#content .container-home .content-md td > code {
-  color: #d63384;
-}
-#content .container-home .content-md .highlight {
-  margin: 16px 0;
-  border-top: 2px solid #e9e7ef;
-  border-bottom: 2px solid #e9e7ef;
-  padding: 2px 0;
-  font-size: 14px;
-  overflow: hidden;
-}
-#content .container-home .content-md .highlight:hover {
-  overflow: auto;
-}
-#content .container-home .content-md .highlight pre {
-  padding-top: 0;
-}
-#content .container-home .content-md pre {
-  font-size: 14px;
-  border-top: 1px solid #e9e7ef;
-  border-bottom: 1px solid #e9e7ef;
-  padding: 12px;
-  overflow: hidden;
-}
-#content .container-home .content-md pre:hover {
-  overflow: auto;
-}
-#content .container-home .content-md pre .lang {
-  cursor: pointer;
-  margin-bottom: 16px;
-  padding: 4px 0px;
-  border-bottom: 1px dashed #adb5bd;
-}
-#content .container-home .content-md em {
-  font-style: italic;
-}
-#content .container-home .content {
-  text-align: center;
-}
-#content .container-home .content .desc img {
-  max-width: 100%;
-}
-#content .container-home .content .desc .words {
-  box-sizing: border-box;
-  font-size: 18px;
-  color: #adb5bd;
-  max-width: 600px;
-  padding: 48px 32px;
-  border-radius: 10px;
-  margin: 120px 0 160px;
-  background: rgba(239, 239, 239, 0.4);
-}
-#content .container-list {
-  font-size: 16px;
-}
-#content .container-list .count {
-  color: #6c757d;
-}
-#content .container-list .list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-}
-#content .container-list .list .recentf {
-  box-sizing: border-box;
-  width: 360px;
-  padding: 8px 4px 32px;
-  margin-right: 32px;
-  margin-top: 48px;
-  background: rgba(239, 239, 239, 0.2);
-  box-shadow: 3px 3px 5px #eee;
-}
-#content .container-list .list .recentf .desc {
-  width: 100%;
-  padding: 8px 0;
-  color: #999;
-}
-#content .container-list .list .recentf .rec-post .rec-post-item a {
-  font-size: 14px;
-  display: inline-block;
-  background: rgba(239, 239, 239, 0.3);
-  margin: 4px;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-#content .container-list .list .desc .date {
-  color: #999;
-  font-size: 12px;
-  font-family: "Segoe Script", segoeFont;
-}
-#content .container-list .list .desc .date:first-child {
-  padding-left: 8px;
-}
-#content .container-list .list .item {
-  box-shadow: 3px 3px 5px #eee;
-  position: relative;
-  padding-bottom: 32px;
-  background: rgba(239, 239, 239, 0.2);
-  margin-right: 32px;
-  margin-top: 48px;
-  width: 360px;
-  overflow: hidden;
-}
-#content .container-list .list .item > a {
-  box-sizing: border-box;
-  width: 100%;
-  display: block;
-  background: rgba(239, 239, 239, 0.2);
-  margin-bottom: 8px;
-  padding: 6px 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: 0.3s padding ease;
-}
-#content .container-list .list .item > a:hover {
-  padding-left: 16px;
-}
-#content .container-list .list .item > a .date {
-  color: #999;
-  font-size: 12px;
-  font-family: "Segoe Script", segoeFont;
-  margin-right: 4px;
-}
-#content .container-list .list .item .summary {
-  font-size: 15px;
-  padding: 8px;
-  color: #6c757d;
-}
-#content .container-list .list .item .read-more {
-  font-size: 13px;
-  text-align: right;
-  background: rgba(239, 239, 239, 0.2);
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-#content .container-list .list .item .read-more a {
-  display: block;
-  padding: 2px 6px;
-  transition: 0.3s padding ease;
-  color: #ced4da;
-}
-#content .container-list .list .item .read-more a:hover {
-  padding-right: 16px;
-}
-#content .container-list .list .item-term {
-  margin: 4px;
-  width: 360px;
-}
-#content .container-list .list .item-term a {
-  box-sizing: border-box;
-  height: 80px;
-  display: block;
-  background: rgba(239, 239, 239, 0.3);
-  margin-bottom: 8px;
-  padding: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 0 16px 0 16px;
-  transition: 0.3s padding ease;
-}
-#content .container-list .list .item-term a:hover {
-  padding-top: 16px;
-}
-#content .container-list .list .item-term a .date {
-  color: #999;
-  font-size: 12px;
-  font-family: "Segoe Script", segoeFont;
-  margin-right: 4px;
-}
-#content .container-list .list .item-term sup {
-  color: #adb5bd;
-}
-#content .container-list .list-single-col {
-  display: block;
-}
-#content .container-list .list-single-col .recentf {
-  width: 760px;
-  margin: 24px auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-#content .container-list .list-single-col .item {
-  width: 760px;
-  margin: 24px auto;
-}
-#content .container-page {
-  position: relative;
-  font-size: 16px;
-  margin: 0 auto;
-  padding: 0 24% 0 16%;
-  max-width: 760px;
-}
-#content .container-page .desc {
-  color: #adb5bd;
-  font-size: 14px;
-}
-#content .container-page .toc {
-  position: fixed;
-  border-left: 1px solid #dee2e6;
-  width: 260px;
-  max-height: 566px;
-  top: 176px;
-  right: 16px;
-  font-size: 14px;
-  overflow: scroll;
-}
-#content .container-page .toc::-webkit-scrollbar {
-  width: 2px;
-}
-#content .container-page .toc::-webkit-scrollbar-thumb {
-  background-color: #dee2e6;
-}
-#content .container-page .toc li {
-  list-style: none;
-}
-#content .container-page .toc li a {
-  color: #6c757d;
-}
-#content .container-page .toc li a:hover {
-  color: #e69;
-}
-#content .container-page .toc .toc-link--active {
-  color: #d14;
-}
-#content .container-page .toc .page-operation {
-  display: flex;
-  position: fixed;
-  top: 136px;
-  right: 144px;
-}
-#content .container-page .toc .page-operation a img {
-  padding: 2px;
-  width: 24px;
-}
-#content .container-page .toc #TableOfContents ul,
-#content .container-page .toc #TableOfContents ol {
-  margin-bottom: 4px;
-}
-#content .container-page .toc #TableOfContents li a:not(:first-child) {
-  color: #dee2e6;
-  font-size: 1px;
-}
-#content .container-page .content p > code,
-#content .container-page .content li > code,
-#content .container-page .content td > code {
-  color: #d63384;
-}
-#content .container-page .content-card h3 {
-  color: #adb5bd;
-  font-size: 18px;
-}
-#content .container-page .content-card h3::before {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  content: "";
-  border-top: 1px dashed #adb5bd;
-  padding-top: 16px;
-}
-#content .container-page .content-card h4 {
-  color: #adb5bd;
-  font-size: 16px;
-}
-#content .container-page .highlight {
-  margin: 16px 0;
-  border-top: 1px solid #e9e7ef;
-  padding: 2px 0;
-  font-size: 14px;
-  overflow: hidden;
-}
-#content .container-page .highlight:hover {
-  overflow: auto;
-}
-#content .container-page .highlight pre {
-  padding-top: 0;
-}
-#content .container-page pre {
-  font-size: 14px;
-  border-top: 1px solid #e9e7ef;
-  border-bottom: 1px solid #e9e7ef;
-  padding: 12px 0;
-  overflow: hidden;
-}
-#content .container-page pre:hover {
-  overflow: auto;
-}
-#content .container-page pre .lang {
-  cursor: pointer;
-  margin-bottom: 16px;
-  padding: 4px 0px;
-  border-bottom: 1px dashed #e9ecef;
-}
-#content .container-page em {
-  font-style: italic;
-}
-#content .container-nav {
-  padding: 0 16%;
-}
-#content .container-nav .toc {
-  position: fixed;
-  right: 100px;
-  top: 183px;
-  height: 468px;
-  overflow: auto;
-  padding: 4px 12px 0px;
-}
-#content .container-nav .toc::-webkit-scrollbar {
-  width: 2px;
-}
-#content .container-nav .toc::-webkit-scrollbar-thumb {
-  background-color: #e9ecef;
-}
-#content .container-nav .toc li {
-  width: 84px;
-  height: 36px;
-  line-height: 28px;
-  list-style: none;
-  border-radius: 8px;
-  margin: 6px 0;
-  border-style: double;
-  border-color: rgba(239, 239, 239, 0.8);
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: 0.2s all linear;
-}
-#content .container-nav .toc li em {
-  color: #666;
-}
-#content .container-nav .toc li a {
-  display: block;
-  padding: 4px 8px;
-  transition: 0.1s all linear;
-  color: #666;
-}
-#content .container-nav .toc li a:hover {
-  padding-left: 28px;
-  background: rgba(239, 239, 239, 0.5);
-}
-#content .container-nav .toc li a:hover em {
-  opacity: 0;
-}
-#content .container-nav h2 {
-  font-size: 16px;
-  color: #adb5bd;
-  font-weight: 400;
-}
-#content .container-nav h2::before {
-  content: "";
-}
-#content .container-nav .content-nav .nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-}
-#content .container-nav .content-nav .nav ul li {
-  box-sizing: border-box;
-  list-style-type: none;
-  width: 20%;
-  margin: 4px 0;
-}
-#content .container-nav .content-nav .nav ul li a {
-  box-sizing: border-box;
-  font-family: jostFont, jinkaiFont, "kaiti", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 16px;
-  transition: 0.3s padding linear;
-  display: inline-block;
-  width: 96%;
-  height: 36px;
-  line-height: 36px;
-  font-weight: 400;
-  padding: 2px 6px;
-  background: rgba(239, 239, 239, 0.5);
-  border-radius: 1px 5px 1px 5px;
-  white-space: nowrap;
-}
-#content .container-nav .content-nav .nav ul li a:hover {
-  padding-left: 12px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-#content .container-nav .content-nav p {
-  color: #adb5bd;
-  margin-right: 1%;
-  padding: 8px 4px 2px;
-}
-#content .container-nav .content-nav .bookmark ul {
-  padding: 4px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-#content .container-nav .content-nav .bookmark ul:hover {
-  overflow: auto;
-}
-#content .container-nav .content-nav .bookmark ul li {
-  list-style-type: none;
-  transition: 0.3s padding linear;
-  border-radius: 1px 5px 1px 5px;
-  padding-left: 4px;
-}
-#content .container-nav .content-nav .bookmark ul li::before {
-  content: "➣ ";
-}
-#content .container-nav .content-nav .bookmark ul li:hover {
-  padding-left: 16px;
-}
-#content .container-nav .content-nav .bookmark ul li a {
-  display: inline-block;
-  width: 100%;
-  padding: 6px 0;
-}
-#content .container-nav .content-nav .bookmark ul li:nth-child(even) {
-  background: rgba(239, 239, 239, 0.6);
-}
-#content .container-search {
-  font-size: 16px;
-}
-#content .container-search #search {
-  padding: 32px 0;
-  position: relative;
-}
-#content .container-search #search #sc-clear {
-  cursor: pointer;
-  transition: 0.5s opacity ease;
-  position: absolute;
-}
-#content .container-search #search #sc-input {
-  outline-style: none;
-  border: 0px;
-  border-bottom: 1px solid #5dade2;
-  padding-bottom: 8px;
-  padding-left: 32px;
-  font-family: jostFont, jinkaiFont, "kaiti", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  width: 500px;
-  background: rgba(255, 255, 255, 0);
-}
-#content .container-search #search #sc-input:focus-visible {
-  border-color: #0dcaf0;
-}
-#content .container-search #search #sc-input::-moz-placeholder {
-  color: #dee2e6;
-  font-family: "Segoe Script", segoeFont;
-}
-#content .container-search #search #sc-input:-ms-input-placeholder {
-  color: #dee2e6;
-  font-family: "Segoe Script", segoeFont;
-}
-#content .container-search #search #sc-input::placeholder {
-  color: #dee2e6;
-  font-family: "Segoe Script", segoeFont;
-}
-#content .container-search #search #sc-res .statistics {
-  padding: 16px 0 0 56px;
-  color: #adb5bd;
-}
-#content .container-search #search #sc-res hr {
-  border: 1px dashed #ccc;
-  margin: 8px 0;
-}
-#content .container-search .list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-}
-#content .container-search .list .item {
-  box-shadow: 3px 3px 5px #eee;
-  background: rgba(239, 239, 239, 0.2);
-  margin-right: 32px;
-  margin-top: 48px;
-  width: 360px;
-  overflow: hidden;
-}
-#content .container-search .list .item > a {
-  box-sizing: border-box;
-  width: 100%;
-  display: block;
-  background: rgba(239, 239, 239, 0.2);
-  margin-bottom: 8px;
-  padding: 6px 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: 0.3s padding ease;
-}
-#content .container-search .list .item > a:hover {
-  padding-left: 16px;
-}
-#content .container-search .list .item > a .date {
-  color: #999;
-  font-size: 12px;
-  font-family: "Segoe Script", segoeFont;
-  margin-right: 4px;
-}
-#content .container-search .list .item .summary {
-  font-size: 15px;
-  padding: 8px;
-  color: #6c757d;
-}
-#content .container-search .list-single-col .item {
-  width: 60%;
-  margin: 24px auto;
-}
-#content .container-archive .desc {
-  font-size: 20px;
-}
-#content .container-archive .recentf {
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-}
-#content .container-archive .recentf .rec-post .rec-post-item a {
-  font-size: 14px;
-  display: inline-block;
-  background: rgba(239, 239, 239, 0.6);
-  margin: 4px;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-#content .container-archive .categories,
-#content .container-archive .tags {
-  display: flex;
-  flex-wrap: wrap;
-}
-#content .container-archive .categories .arc-item,
-#content .container-archive .tags .arc-item {
-  padding: 4px;
-  background: #f8f9fa;
-  margin: 12px 12px 6px 0px;
-  width: 31%;
-  box-sizing: border-box;
-}
-#content .container-archive .categories .arc-item .arc-desc,
-#content .container-archive .tags .arc-item .arc-desc {
-  padding: 8px 0;
-}
-#content .container-archive .categories .arc-item .arc-desc a,
-#content .container-archive .tags .arc-item .arc-desc a {
-  font-size: 16px;
-}
-#content .container-archive .categories .arc-item .arc-desc a sup,
-#content .container-archive .tags .arc-item .arc-desc a sup {
-  color: #dee2e6;
-}
-#content .container-archive .categories .arc-item .arc-post,
-#content .container-archive .tags .arc-item .arc-post {
-  display: flex;
-  flex-wrap: wrap;
-}
-#content .container-archive .categories .arc-item .arc-post .arc-post-item a,
-#content .container-archive .tags .arc-item .arc-post .arc-post-item a {
-  font-size: 14px;
-  display: inline-block;
-  background: rgba(239, 239, 239, 0.6);
-  margin: 4px;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-#content .container-archive .tags {
-  margin-top: 32px;
+/*TABLE*/
+
+table {
+    font-size: 0.875rem;
+    padding: 0;
+    margin: 1.5rem 0;
+    word-break: initial;
 }
 
-.container-ctgtag {
-  padding-bottom: 8px;
-}
-.container-ctgtag .taxonomy {
-  display: flex;
-}
-.container-ctgtag .taxonomy .ctg {
-  margin-right: 4px;
-}
-.container-ctgtag .taxonomy .ctg a,
-.container-ctgtag .taxonomy .tag a {
-  font-size: 12px;
-  color: #adb5bd;
-  background: rgba(239, 239, 239, 0.6);
-  padding: 0px 8px;
-  border-radius: 4px;
-  margin-right: 4px;
-}
-.container-ctgtag .taxonomy .tag a {
-  border-radius: 0 8px 0 6px;
+table tr {
+    border-top: 1px solid var(--borders);
+    border-bottom: 1px solid var(--borders);
+    margin: 0;
+    padding: 0;
 }
 
-.container-contact {
-  position: relative;
-  background: rgba(255, 255, 255, 0);
-  text-align: right;
-  margin-top: 128px;
-}
-.container-contact .contact .slogan {
-  padding-right: 8px;
-}
-.container-contact .contact .icons {
-  padding: 4px 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.container-contact .contact a svg {
-  padding: 0 5px;
-  opacity: 0.5;
-}
-.container-contact .contact a .qr {
-  width: 0;
-  height: 160px;
-  opacity: 0;
-  position: absolute;
-  top: -200px;
-  transform: translate(-50%);
-  transition: 0.3s all ease;
-}
-.container-contact .contact #wechat:hover .qr {
-  z-index: 1;
-  width: 160px;
-  opacity: 1;
+table tr.md-end-block {
+    border-top: none;
 }
 
-.container-prevnext {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #f8f9fa;
-  padding-top: 32px;
-  overflow: hidden;
-}
-.container-prevnext a {
-  display: block;
-  box-sizing: border-box;
-  border: 1px solid #dee2e6;
-  min-width: 128px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 8px;
-  text-align: center;
-  padding: 0 16px;
+table tbody tr:last-child {
+    border-bottom: none;
 }
 
-.container-comment {
-  background: rgba(239, 239, 239, 0.3);
-  margin-top: 32px;
-  border-radius: 8px;
-  padding: 4px;
+table tr th {
+    font-weight: bold;
+    border: none;
+    border-bottom: solid 2px var(--borders);
+    margin: 0;
+    padding: 10px 16px;
+    transition-duration: 0.3s;
+    transition-property: background-color;
 }
 
-.container-pagination {
-  margin: 0 auto;
-  padding: 32px 0 48px;
-  position: relative;
-}
-.container-pagination ul.pagination {
-  list-style-type: none;
-  display: flex;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-}
-.container-pagination ul.pagination li.page-item {
-  padding: 8px;
-}
-.container-pagination ul.pagination li.active a {
-  font-weight: 700;
-}
-.container-pagination ul.pagination li.disabled a {
-  opacity: 0.3;
+table tr td {
+    border: none;
+    margin: 0;
+    padding: 10px 16px;
+    transition-duration: 0.3s;
+    transition-property: background-color;
 }
 
-.container-404 .content {
-  width: 54%;
-  margin: 48px auto 56px;
-}
-.container-404 .content .words {
-  text-align: center;
-  font-family: xianmoFont;
-  font-size: 18px;
-}
-.container-404 .desc {
-  text-align: center;
-  font-weight: 700;
-}
-.container-404 .desc a {
-  font-size: 24px;
+#write table tr td:hover,
+#write table tr th:hover {
+    background-color: var(--boxes);
 }
 
-#footer {
-  background: rgba(255, 255, 255, 0);
-  padding: 16px 0 32px 0;
-  padding: 16px 80px 32px;
-  border-top: 1px solid #eee;
-}
-#footer .container-footer {
-  clear: both;
-  font-size: 14px;
-}
-#footer .container-footer a {
-  color: #5d2f86;
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
 }
 
-.container-media .media a svg {
-  width: 20px;
-  height: 20px;
-  padding: 6px 0;
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
 }
 
-body.on-focus-mode {
-  color: #c8c8c8;
+/*OTHER TABLE THINGS*/
+
+.ty-table-edit {
+    background-color: var(--boxes);
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    box-shadow: none;
+    transform: translateY(2.5rem);
+    transition-duration: 0.3s;
+    transition-property: opacity;
 }
-body #write {
-  width: 766px;
+
+.ty-table-edit + .md-table {
+    margin-top: 3rem;
 }
-body #write > p > span {
-  width: auto;
+
+.ty-table-edit:active,
+.ty-table-edit:focus {
+    box-shadow: none;
 }
-body #write > p > span.md-comment {
-  font-size: 14px;
-  color: #969696;
+
+.popover,
+.popover:active,
+.popover:focus {
+    border: solid 1px var(--borders);
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+    border-radius: 0.3rem;
 }
-body pre {
-  font-size: 14px !important;
-  background: #f6f8fa !important;
+
+.popover .arrow {
+    border-bottom-color: var(--borders);
 }
-body pre.md-meta-block {
-  padding: 6px;
+
+.md-grid-board a {
+    background-color: transparent;
+    border-color: var(--borders);
+    border-radius: 2px;
 }
-body .CodeMirror-code {
-  padding: 4px;
+
+.md-grid-board .md-grid-ext {
+    background-color: var(--borders);
+    border-radius: 2px;
 }
-body #write blockquote {
-  margin: 16px 0;
-}/*# sourceMappingURL=virgo.css.map */
+
+.md-grid-board tr[row="1"] .md-grid-ext {
+    background: none;
+    border-radius: 6px;
+}
+
+.md-grid-board tr[row="1"] .md-grid-ext a {
+    background-color: var(--boxes-darker2);
+    border-color: var(--boxes-darker2);
+}
+
+.md-grid-board tr[row="1"] td {
+    background-color: var(--bg-color);
+    border-color: var(--borders);
+}
+
+.md-grid-board a.md-active,
+.md-grid-board a:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.md-grid-board tr[row="1"] a.md-active,
+.md-grid-board tr[row="1"] a:hover {
+    background-color: var(--primary-color-darker);
+    border-color: var(--primary-color-darker);
+}
+
+#md-grid-width,
+#md-grid-height {
+    border-radius: 0.3rem;
+    border-color: var(--borders);
+    transition-duration: 0.3s;
+    transition-property: border-color;
+}
+
+#md-grid-width:focus,
+#md-grid-height:focus {
+    border-radius: 0.3rem;
+    border-color: var(--primary-color);
+}
+
+/*CODE*/
+
+.CodeMirror {
+    padding: 1rem;
+    font-family: var(--code-font-family);
+}
+
+.cm-s-inner .CodeMirror-gutters {
+    background-color: none;
+    border-right: none;
+    border-radius: 0px;
+    color: white;
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    border-left: solid 2px var(--light-text-color-darker);
+}
+
+.CodeMirror.cm-s-typora-default .CodeMirror-activeline-background {
+    background-color: var(--codeboxes-lighter);
+}
+
+.cm-s-inner .CodeMirror-cursor {
+    color: white;
+    border-left: solid 1px white;
+}
+
+.CodeMirror-linenumber {
+    color: var(--bg-color);
+    opacity: 0.6;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cm-error {
+    color: var(--danger-color);
+}
+
+.cm-s-inner span.cm-comment,
+.cm-s-typora-default span.cm-comment,
+.cm-s-typora-default span.cm-code {
+    color: #9daab6;
+}
+
+.cm-s-inner span.cm-string,
+.cm-s-inner span.cm-string-2 {
+    color: #71a7ff;
+}
+
+.cm-s-inner span.cm-number {
+    color: #ff9d3d;
+}
+
+.cm-s-inner span.cm-variable,
+.cm-s-inner span.cm-variable-2 {
+    color: white;
+}
+
+.cm-s-inner span.cm-def {
+    color: white;
+}
+
+.cm-s-inner span.cm-operator {
+    color: #ff9d3d;
+}
+
+.cm-s-inner span.cm-keyword {
+    color: #61e3a5;
+}
+
+.cm-s-inner span.cm-atom {
+    color: #bd93f9;
+}
+
+.cm-s-inner span.cm-meta {
+    color: #f8f8f2;
+}
+
+.cm-s-inner span.cm-link,
+.cm-s-typora-default .cm-link {
+    color: var(--primary-color);
+}
+
+.cm-s-inner span.cm-tag,
+.cm-s-inner .cm-header {
+    color: #b4f6d6;
+}
+
+.cm-s-inner span.cm-attribute {
+    color: #ff9d3d;
+}
+
+.cm-s-inner span.cm-qualifier,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-variable-3 {
+    color: #82ee9d;
+}
+
+.cm-s-inner span.cm-property {
+    color: #ffd6ad;
+}
+
+.cm-s-inner span.cm-builtin {
+    color: #8ffaaa;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+    background: none;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cm-s-inner .cm-search-hit.CodeMirror-selected, .cm-s-inner .cm-search-hit.CodeMirror-selectedtext {
+    background: var(--select-text-bg-color)!important;
+} /* removes black background from code search selected */
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+    color: white;
+    font-weight: 400;
+}
+
+.md-fences .code-tooltip {
+    box-shadow: rgba(116, 129, 141, 0.08) 0px 2px 6px 0px;
+    border: solid 1px var(--borders);
+    border-radius: 0.3rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 15rem;
+    height: 2.5rem;
+    bottom: -3rem;
+    padding: 0.1875rem;
+}
+
+.md-fences .code-tooltip .ty-input {
+    border: solid 1px var(--borders);
+    height: 2rem;
+    line-height: 2rem;
+    margin: 0rem;
+    padding-left: 0.5rem !important;
+    text-align: left;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    transition-duration: 0.3s;
+    transition-property: border;
+}
+
+.md-fences .code-tooltip .ty-input:focus {
+    border-color: var(--primary-color);
+}
+
+.html-for-mac .ty-cm-lang-input:empty:after {
+    left: 0.5rem;
+}
+
+.autoComplt-list li,
+.fences-auto-suggest li {
+    font-weight: 500;
+    transition-duration: 0.3s;
+    transition-property: background-color, color;
+}
+
+.autoComplt-list li.active,
+.fences-auto-suggest li:hover {
+    background-color: var(--boxes);
+    color: var(--primary-color);
+}
+
+.md-fences,
+tt {
+    border-radius: 0.3rem;
+    color: #ffffff;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+}
+
+code {
+    padding: 0.2rem 0.4rem;
+    background-color: var(--borders);
+    font-size: 0.9rem;
+    border-radius: 0.2rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.md-fences .CodeMirror div.CodeMirror-cursor,
+#typora-source div.CodeMirror-cursor {
+    border-left: solid 1px white;
+}
+
+.md-fences {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background-color: var(--codeboxes);
+}
+
+#typora-source {
+    background-color: var(--codeboxes);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/*DIAGRAMS*/
+
+.md-diagram-panel {
+    color: var(--text-color);
+    border: solid 1px var(--borders);
+    border-radius: 0.3rem;
+}
+
+.md-diagram-panel text,
+.md-diagram-panel .label {
+    color: var(--text-color);
+}
+
+.md-diagram-panel text {
+    fill: var(--text-color) !important /*required*/;
+}
+
+.md-diagram-panel-error {
+    color: var(--danger-color);
+}
+
+/*CHECKBOXES*/
+
+.md-task-list-item > input:before,
+input[type="checkbox"]:before {
+    border-radius: 0.2rem;
+    margin-top: -0.08rem;
+    margin-left: -0.1rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--borders);
+    content: " ";
+    display: block;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+}
+
+.md-task-list-item:hover > input:before,
+input[type="checkbox"]:hover:before {
+    background-color: var(--boxes-darker);
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before,
+input[type="checkbox"]:checked:before {
+    background-color: var(--primary-color);
+}
+
+.md-task-list-item:hover > input:checked:before,
+.md-task-list-item:hover > input[checked]:before,
+input[type="checkbox"]:hover:checked:before {
+    background-color: var(--primary-color-darker);
+}
+
+.md-task-list-item > input:after,
+.md-task-list-item > input:after,
+input[type="checkbox"]:after {
+    transform: rotate(-45deg);
+    position: absolute;
+    border: 2px solid white;
+    border-top: 0;
+    border-right: 0;
+    top: 0.16rem;
+    left: 0.1rem;
+    width: 0.6rem;
+    height: 0.375rem;
+    content: " ";
+    opacity: 0;
+    transition-duration: 0.3s;
+    transition-property: opacity;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after,
+input[type="checkbox"]:checked:after {
+    opacity: 1;
+}
+
+.ty-preferences input[type="checkbox"]:before {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.ty-preferences input[type="checkbox"]:after {
+    width: 0.5rem;
+    height: 0.32rem;
+    top: 0.19rem;
+    left: 0.14rem;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    line-height: 1.45;
+    background-color: var(--boxes);
+    border: 0;
+    border-radius: 0.3rem;
+    color: var(--text-color);
+    border-left: solid 4px var(--boxes-darkest);
+}
+
+#write pre.md-meta-block:empty:before {
+    color: var(--light-text-color);
+}
+
+.md-image > .md-meta {
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: var(--md-char-color);
+    opacity: 1;
+}
+
+/*TOC*/
+
+.md-toc {
+    margin: 1.5rem 0rem;
+}
+
+.md-toc:focus .md-toc-content {
+    border: none;
+}
+
+#write div.md-toc-tooltip {
+    background-color: var(--boxes);
+    line-height: 1.6rem;
+    padding: 0.3rem 0.75rem;
+    border-top: none;
+    border-radius: 0.3rem;
+}
+
+.md-toc.md-focus {
+    margin-top: 4.5rem;
+}
+
+#write div.md-toc-tooltip + .md-toc-content {
+    padding-top: 1rem;
+}
+
+.md-delete-toc {
+    padding: 0px;
+}
+
+/*MATH*/
+
+.md-rawblock-container {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.md-rawblock:hover .md-rawblock-container {
+    background-color: var(--boxes);
+}
+
+.md-rawblock:active .md-rawblock-container {
+    background-color: var(--boxes-darker);
+}
+
+.MathJax_SVG:focus {
+    outline: none;
+}
+
+.md-rawblock-panel,
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    border-radius: 0.3rem;
+    background-color: var(--boxes);
+}
+
+.md-rawblock-panel .code-tooltip {
+    box-shadow: none;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+
+.md-rawblock-panel .CodeMirror-linenumber {
+    color: var(--light-text-color);
+    opacity: 1;
+}
+
+.md-rawblock-panel .CodeMirror div.CodeMirror-cursor {
+    border-left: solid 1px var(--text-color);
+}
+
+.md-mathblock-panel .md-mathjax-preview,
+.mathjax-candidate {
+    border-top: solid 1px var(--borders);
+}
+
+.md-rawblock-after,
+.md-rawblock-before {
+    cursor: default;
+    color: var(--light-text-color);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.md-rawblock-tooltip-name {
+    font-size: 13px;
+    color: var(--light-text-color);
+    opacity: 1;
+}
+
+.md-rawblock-on-edit > .md-rawblock-tooltip {
+    padding-right: 0px;
+}
+
+.md-rawblock-input span.cm-tag {
+    color: #0bb6ad;
+}
+
+.md-rawblock-input span.cm-atom,
+.md-inline-math script {
+    color: #b61ed4;
+}
+
+.md-rawblock-input span.cm-number {
+    color: #ec7200;
+}
+
+.md-rawblock-input span.cm-keyword {
+    color: #156db6;
+}
+
+.md-mathblock-input span.cm-bracket {
+    color: var(--light-text-color);
+}
+
+#math-inline-preview.code-tooltip {
+    border-radius: 0.3rem;
+    background-color: var(--bg-color);
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+    color: var(--text-color);
+    opacity: 1;
+}
+
+#math-inline-preview.code-tooltip .code-tooltip-content {
+    border: solid 1px var(--borders);
+}
+
+#math-inline-preview.code-tooltip .md-arrow:after {
+    background-color: var(--bg-color);
+    border: solid 1px var(--borders);
+    box-shadow: none;
+}
+
+/*FOOTER*/
+
+footer.ty-footer {
+    border: none;
+}
+
+.footer-item {
+    opacity: 1 !important;
+    color: var(--light-text-color);
+    transition: 0.3s;
+}
+
+.footer-item:hover {
+    color: var(--light-text-color-darker) !important;
+}
+
+#outline-btn:hover {
+    color: var(--light-text-color-darker) !important;
+}
+
+/*SIDEBAR*/
+
+#typora-sidebar {
+    border-right: solid 1px var(--borders);
+}
+
+.info-panel-tab {
+    opacity: 1;
+}
+
+.sidebar-tab {
+    text-transform: capitalize;
+    color: var(--light-text-color);
+}
+
+.info-panel-tab-border {
+    color: var(--primary-color);
+    border-radius: 2px;
+}
+
+#ty-sidebar-search-back-btn {
+    margin: auto;
+}
+
+.ty-show-outline-filter #file-library-search,
+.ty-show-search #file-library-search {
+    height: 4rem;
+}
+
+#file-library-search-input {
+    height: 2rem;
+}
+
+#file-library-search-panel input {
+    margin-top: 8px !important;
+}
+
+.ty-sidebar-search-panel .searchpanel-search-option-btn,
+#ty-sidebar-search-tabs .searchpanel-search-option-btn {
+    top: 15px;
+}
+
+#typora-sidebar #filesearch-case-ion-btn,
+#typora-sidebar #filesearch-word-ion-btn {
+    background: none;
+    margin-top: 0.45rem;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+}
+
+#typora-sidebar #filesearch-case-ion-btn:hover,
+#typora-sidebar #filesearch-word-ion-btn:hover {
+    color: var(--primary-color);
+}
+
+/*sidebar loading*/
+
+#typora-sidebar #sidebar-loading-template {
+    padding: 0px;
+}
+
+#typora-sidebar #sidebar-loading-template .typora-search-spinner {
+    opacity: 1;
+    color: var(--light-text-color-darker);
+}
+
+#typora-sidebar #sidebar-loading-template .typora-quick-open-info {
+    color: var(--light-text-color-darker);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/*sidebar outline*/
+
+#close-outline-filter-btn {
+    top: 15px;
+    opacity: 1;
+    color: var(--light-text-color) !important;
+}
+
+#close-outline-filter-btn:hover {
+    color: var(--primary-color) !important;
+    background-color: transparent !important;
+}
+
+#close-outline-filter-btn:active {
+    background-color: transparent !important;
+}
+
+#outline-content {
+    padding-right: 0px;
+    line-height: 1rem;
+}
+
+.outline-item {
+    display: flex;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.outline-item .outline-label {
+    display: block;
+    width: 100%;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-right: solid 2px transparent;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--light-text-color-darker);
+}
+
+.outline-item:hover {
+    background: none;
+}
+
+.outline-item:hover .outline-label {
+    color: var(--primary-color);
+}
+
+.outline-label:hover {
+    text-decoration: none;
+}
+
+.outline-active.outline-label {
+    border-right: solid 2px var(--primary-color);
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.outline-expander {
+    padding-top: 0.4rem;
+    padding-right: 0.5rem;
+}
+
+#toc-dropmenu .outline-label {
+    line-height: 1rem;
+}
+
+#toc .outline-title {
+    margin-top: 9px;
+    font-size: 1rem;
+    font-weight: 500;
+    user-select: none;
+}
+
+#pin-outline-btn {
+    padding: 14px 18px 0px 0px;
+}
+
+/*sidebar file-list and search results*/
+
+#file-library-list[data-state="complete"] #sidebar-loading-template {
+    padding: 0rem;
+}
+
+#typora-sidebar .file-list-item,
+.ty-search-item {
+    border: none;
+    padding: 1rem;
+}
+
+body.html-for-mac #typora-sidebar .file-list-item,
+body.html-for-mac .ty-search-item {
+    transition-duration: 0.3s !important;
+    transition-property: background-color, border, color, height !important;
+}
+
+#typora-sidebar .file-list-item:hover,
+.ty-search-item:hover {
+    background: var(--borders);
+}
+
+#typora-sidebar .ty-search-item-line {
+    font-family: var(--font-family);
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    margin-left: 24px;
+}
+
+body.html-for-mac #typora-sidebar .ty-search-item-line {
+    transition-duration: 0.2s;
+}
+
+#typora-sidebar .ty-search-item-line * {
+    opacity: 1;
+}
+
+#typora-sidebar .ty-search-item .ty-search-item-line:hover,
+#typora-sidebar .ty-search-item-line.active {
+    background-color: var(--select-text-bg-color);
+    color: white;
+} /* makes easier identifying which searched item is active in the sidebar */
+
+#typora-sidebar .file-list-item-file-name {
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 0rem;
+    line-height: 1.8rem;
+    float: right;
+}
+
+#typora-sidebar .file-list-item-file-ext-part {
+    font-weight: 800;
+    opacity: 0.5;
+}
+
+#typora-sidebar .file-list-item-parent-loc,
+#typora-sidebar .file-list-item-time {
+    font-family: var(--font-family);
+    font-weight: 400;
+    opacity: 0.5;
+    display: block;
+}
+
+#typora-sidebar .file-list-item-summary {
+    float: left;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+#typora-sidebar input.file-list-item-file-name {
+    margin: 0.5rem 0rem 0.5rem 0.7rem;
+    padding: 0.4rem !important;
+    line-height: 1rem;
+    float: right;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    background-color: white !important;
+}
+
+#typora-sidebar .file-list-item-count {
+    font-size: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.2rem;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    text-align: center;
+    line-height: 1.25rem;
+    position: relative;
+    top: 0.3rem;
+}
+
+#typora-sidebar .file-list-item.file-library-file-node {
+    border: none;
+}
+
+#typora-sidebar .file-tree-node.active .file-node-background,
+#typora-sidebar .file-list-item.active,
+#typora-sidebar .ty-search-item.active {
+    background-color: white;
+    outline: 1px solid var(--borders);
+    border: none;
+    color: var(--primary-color) !important;
+}
+
+#typora-sidebar .file-tree-node.active .file-node-content {
+    color: var(--primary-color) !important;
+}
+
+#typora-sidebar .file-tree-node {
+    padding: 0rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-left: 0.8rem;
+}
+
+#typora-sidebar .file-tree-node .file-node-content {
+    padding: 0rem;
+    line-height: 2.2rem;
+    height: 2.2rem;
+    background: none;
+    margin-bottom: 0px;
+}
+
+#typora-sidebar .file-tree-node .file-node-background {
+    padding: 0rem;
+    height: 2.2rem;
+}
+
+#typora-sidebar .file-tree-node .file-node-icon {
+    margin-right: 0.5rem;
+}
+
+#typora-sidebar .file-tree-node .file-node-icon.fa-file-text-o {
+    margin-top: 0.33rem;
+}
+
+#typora-sidebar .file-tree-node .file-node-icon.fa-folder {
+    margin-top: 0.36rem;
+}
+
+#typora-sidebar .file-tree-node .fa-caret-down,
+#typora-sidebar .file-tree-node .fa-caret-right {
+    position: relative;
+    top: 5px;
+}
+
+#typora-sidebar .file-tree-node .file-tree-rename-input {
+    height: 2.2rem;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0rem;
+    padding-left: 0rem;
+}
+
+#typora-sidebar .ty-search-item-collapse-icon {
+    top: 9px;
+}
+
+/*no left border*/
+#typora-sidebar .file-tree-node.active > .file-node-background {
+    border: none;
+}
+
+/*no dotted highlighting*/
+.file-library-node:not(.file-node-root):focus > .file-node-content {
+    outline: none;
+}
+
+#typora-sidebar #sidebar-files-menu {
+    border: solid 1px var(--borders);
+    border-radius: 0.3rem;
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+    background-color: var(--bg-color);
+    border-top: solid 1px var(--borders);
+    font-weight: 500;
+}
+
+#typora-sidebar #ty-sidebar-footer li {
+    transition-duration: 0.2s;
+    transition-property: background-color, color;
+}
+
+#typora-sidebar
+    #ty-sidebar-footer
+    li:not(.file-sort-item):not(:first-child):not(.empty-menu-group):not(.folder-menu-group):hover {
+    color: var(--primary-color);
+    background-color: var(--boxes);
+}
+
+#typora-sidebar
+    #ty-sidebar-footer
+    .file-action-item.file-sort-item
+    > span:first-of-type {
+    line-height: 2rem;
+}
+
+/*cursor*/
+.file-node-content:hover {
+    cursor: pointer;
+}
+
+body.html-for-mac
+    .file-tree-node:not(.file-node-root):not(.file-node-expanded)
+    .file-node-background {
+    transition-duration: 0.2s;
+    transition-property: background-color;
+}
+
+.file-tree-node:not(.file-node-root):not(.file-node-expanded):hover
+    .file-node-background {
+    background-color: var(--borders);
+}
+
+#typora-sidebar .sidebar-footer-item {
+    transition-duration: 0.2s;
+    transition-property: background-color, color;
+    font-weight: 700;
+}
+
+#typora-sidebar .sidebar-footer-item:hover {
+    color: var(--primary-color);
+    background-color: var(--boxes);
+}
+
+#typora-quick-open {
+    background-color: white;
+    border: 1px solid var(--borders);
+    border-radius: 0.3rem;
+    padding: 0rem;
+    box-shadow: rgba(116, 129, 141, 0.15) 0px 3px 16px 0px;
+    overflow: hidden;
+}
+
+#typora-quick-open-input {
+    margin-right: 20px;
+}
+
+#typora-quick-open-input .input {
+    box-shadow: none !important /*required*/;
+    border: none !important /*required*/;
+    font-weight: 400 !important /*required*/;
+    margin: 0.5rem;
+    margin-left: 0.8rem;
+}
+
+.typora-quick-open-item {
+    background-color: white;
+    border: none;
+    font-weight: 500;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+}
+
+.typora-quick-open-item:hover {
+    background-color: var(--boxes);
+    color: var(--primary-color);
+}
+
+.typora-quick-open-item.active {
+    background-color: var(--boxes);
+    border: none;
+}
+
+.typora-quick-open-item-path {
+    opacity: 1;
+    color: var(--light-text-color);
+}
+
+.typora-quick-open-item:hover .typora-quick-open-item-path {
+    opacity: 0.7;
+    color: var(--primary-color);
+}
+
+.ty-quick-open-category-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    opacity: 1;
+    color: var(--light-text-color);
+    line-height: 32px;
+    padding-top: 6px;
+    height: 32px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+.md-lang {
+    color: var(--primary-color);
+}
+
+/*NOTIFICATION*/
+
+#md-notification {
+    border-bottom: solid 1px var(--borders);
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+}
+
+#md-notifcation .btn {
+    border: 0;
+}
+
+/*PREFERENCES*/
+
+.ty-preferences {
+    font-family: var(--font-family);
+}
+
+.ty-preferences .window-header {
+    justify-content: space-between;
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+    border-bottom: solid 1px var(--borders);
+}
+
+.ty-preferences .window-header-content {
+    background-color: white;
+    margin: 0rem;
+}
+
+.ty-preferences .window-header h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0rem;
+    margin-left: 1rem;
+}
+
+.unibody-window .ty-preferences .window-header h2 {
+    margin-left: 1rem !important;
+}
+
+.ty-preferences .window-header-back {
+    margin-left: 1.2rem;
+}
+
+.ty-preferences .window-header-back .icon {
+    border-right: none;
+}
+
+/*preferences sidebar*/
+.ty-preferences .window-content {
+    background-color: white;
+}
+
+.ty-preferences .nav-group-item {
+    color: var(--text-color);
+    height: 2.5rem;
+    line-height: 2.6rem;
+    font-weight: 500;
+    padding: 0px 0px 0px 2rem;
+    font-size: 1rem;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+}
+
+.ty-preferences .nav-group-item:hover {
+    background-color: var(--borders);
+    border-radius: 0px;
+}
+
+.ty-preferences .nav-group-item.active {
+    border-radius: 0rem;
+    border: none;
+    outline: 1px solid var(--borders);
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.ty-preferences .pane-sm {
+    background: var(--boxes);
+    flex-basis: 240px;
+    flex-grow: 0;
+    justify-content: center;
+    border-right: 1px solid var(--borders);
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.ty-preferences .pane-sm .list-group {
+    width: 100%;
+    max-width: 30rem;
+}
+
+.ty-preferences .list-group-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ty-preferences .list-group-header div {
+    width: 100%;
+    margin-right: 18px;
+    margin-left: 18px;
+}
+
+.ty-preferences .pane-sm .search-input {
+    margin: 0rem !important;
+    width: 100%;
+    font-size: 1rem !important;
+    height: 2.75rem;
+}
+
+.ty-preferences .pane-sm .search-input:active,
+.ty-preferences .pane-sm .search-input:focus {
+    border: solid 1px var(--primary-color) !important;
+    outline: none;
+}
+
+/*preferences main*/
+.ty-preferences .panel-header {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+/*preferences stuff*/
+.ty-preferences .dropdown-menu > li,
+.dropdown-item {
+    font-weight: 500;
+    font-size: 1rem;
+    transition-duration: 0.2s;
+    transition-property: all;
+}
+
+.ty-preferences .dropdown-menu .active,
+.ty-preferences .dropdown-menu li:hover,
+.dropdown-item:hover {
+    background-color: var(--boxes);
+    color: var(--primary-color);
+}
+
+#ty-spell-check-dict-missing-secondary-btn:hover {
+    color: var(--primary-color) !important;
+}
+
+.header-close .icon {
+    border: none !important;
+}
+
+/*preferences export*/
+
+.export-detail {
+    background-color: transparent !important /*required*/;
+}
+
+.export-items-list .separator {
+    margin: 0.4rem;
+    border-top: 1px solid var(--borders);
+}
+
+.export-items-list-control {
+    background-color: var(--boxes) !important /*required*/;
+}
+
+.export-item {
+    padding: 0.4rem !important /*required*/;
+    color: var(--light-text-color-darker);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.export-item.active {
+    background-color: transparent !important /*required*/;
+    color: var(--primary-color);
+    font-weight: 500 !important /*required*/;
+}
+
+/*DROPDOWN*/
+
+.dropdown-menu:not(.megamenu-menu-list),
+.auto-suggest-container {
+    background-color: var(--bg-color);
+    border: solid 1px var(--borders) !important;
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+    user-select: none;
+}
+
+.dropdown-menu > li > a,
+.auto-suggest-container li {
+    font-weight: 500;
+    font-size: 0.8rem;
+    transition-duration: 0.2s;
+    transition-property: all;
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > li > a:hover,
+.menu-style-btn.active,
+.auto-suggest-container li:hover,
+.context-menu.dropdown-menu > .active > a,
+.context-menu.dropdown-menu > li > a:hover,
+.auto-suggest-container li.active {
+    color: var(--primary-color);
+    background-color: var(--boxes);
+}
+
+.menu-style-btn {
+    color: var(--text-color);
+    border: none;
+    transition-duration: 0.2s;
+    transition-property: all;
+}
+
+.menu-style-btn:hover {
+    color: var(--primary-color);
+    background-color: var(--boxes);
+    border: none;
+}
+
+header .menu-style-btn:hover {
+    background-color: transparent;
+}
+
+.menu-item-container {
+    padding: 0 12px 0 4px;
+}
+
+.menu-item-container a.menu-style-btn {
+    padding: 0.3rem 0.6rem;
+    margin: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: var(--borders);
+    opacity: 1;
+}
+
+/*BUTTON*/
+
+.btn,
+button {
+    border: none !important;
+    border-radius: 0.3rem !important;
+    color: var(--text-color) !important;
+    transition-duration: 0.2s;
+    transition-property: all;
+    font-size: 0.9rem !important;
+    font-weight: 500;
+    outline: none;
+}
+
+.btn-default {
+    border: none !important;
+    border-radius: 0.3rem !important;
+    background-color: var(--boxes) !important;
+}
+
+.btn:hover,
+.button-hover {
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--borders) !important;
+    color: var(--text-color);
+}
+
+button:active,
+button.active,
+.btn:active,
+.btn-default:active {
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--boxes-darker) !important;
+    box-shadow: none;
+    outline: none;
+    color: var(--text-color);
+}
+
+.btn:focus {
+    border: none !important;
+    outline: none !important;
+    background-color: var(--boxes-darker);
+}
+
+.btn-primary {
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: white;
+    background-color: var(--primary-color-darker) !important;
+}
+
+.btn.dropdown-toggle-split,
+.btn.dropdown-toggle-split:hover {
+    border-radius: 0rem 0.3rem 0.3rem 0rem !important;
+}
+
+#ty-spell-check-dict-missing-primary-btn {
+    border-radius: 0.3rem 0rem 0rem 0.3rem !important;
+}
+
+.open > .dropdown-toggle.btn-primary {
+    background-color: var(--primary-color);
+    border-color: transparent;
+}
+
+/*GHOST BUTTON*/
+
+.window-header button,
+#close-sidebar-menu-btn,
+.html-for-mac .sidebar-tab-btn,
+.label-hint,
+.ty-table-edit .btn,
+.zoom-hint-button,
+.md-rawblock-tooltip-btn,
+.md-delete-toc,
+#md-searchpanel .input-group-addon.btn,
+#pin-outline-btn,
+.icon-button {
+    background-color: transparent !important;
+    color: var(--light-text-color) !important;
+    opacity: 1 !important;
+    transition-duration: 0.2s;
+    transition-property: color;
+}
+
+.window-header button:hover,
+.window-header button:focus,
+#close-sidebar-menu-btn:hover,
+#close-sidebar-menu-btn:focus,
+.html-for-mac .sidebar-tab-btn:hover,
+.html-for-mac .sidebar-tab-btn:focus,
+.label-hint:hover,
+.label-hint:focus,
+.ty-table-edit .btn:hover,
+.ty-table-edit .btn:focus,
+.zoom-hint-button:hover,
+.zoom-hint-button:focus,
+.md-rawblock-tooltip-btn:hover,
+.md-rawblock-tooltip-btn:focus,
+.md-delete-toc:hover,
+.md-delete-toc:focus,
+#md-searchpanel .input-group-addon.btn:hover,
+#md-searchpanel .input-group-addon.btn:focus,
+#pin-outline-btn:hover,
+#pin-outline-btn:focus,
+.icon-button:hover,
+.icon-button:focus {
+    color: var(--primary-color) !important;
+    background: none !important;
+}
+
+.ty-table-edit .btn.active {
+    color: var(--primary-color) !important;
+    box-shadow: none;
+}
+
+/*IMAGE BUTTON*/
+
+.md-image-btn {
+    background-color: var(--boxes);
+    transition-duration: 0.2s;
+    transition-property: background-color;
+}
+
+.md-image-btn:before {
+    color: var(--text-color);
+    transition-duration: 0.2s;
+    transition-property: color;
+}
+
+.md-image-btn:hover {
+    background-color: var(--borders);
+}
+
+.md-image-btn:hover:before {
+    color: var(--primary-color);
+}
+
+.md-image-input-src-btn {
+    border-radius: 0.3rem 0rem 0rem 0.3rem !important;
+}
+
+.md-image-pick-file-btn {
+    border-left: none;
+    border-radius: 0rem 0.3rem 0.3rem 0rem !important;
+}
+
+/*SEARCH-INPUTS*/
+
+.search-input,
+.search,
+.form-control,
+#file-library-search-input {
+    background-color: transparent !important;
+    border-radius: 0.3rem !important;
+    border: solid 1px var(--boxes-darker) !important;
+    box-shadow: none !important;
+    color: var(---heading-text-color) !important;
+    font-size: 0.9rem !important;
+    font-weight: 400;
+    padding: 0.7rem !important;
+    height: 2rem;
+    transition-duration: 0.2s;
+    transition-property: border, box-shadow;
+}
+
+.search-input:hover,
+.search:hover,
+.form-control:hover,
+#file-library-search-input:hover {
+    border: solid 1px var(--boxes-darker2) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+.search-input:focus,
+.search:focus,
+.form-control:focus,
+#file-library-search-input:focus {
+    background-color: transparent !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+    color: var(--heading-text-color) !important;
+    font-size: 0.9rem !important;
+    padding: 0.7rem !important;
+}
+
+.search-input::placeholder,
+.search::placeholder,
+.form-control::placeholder,
+#file-library-search-input::placeholder {
+    color: var(--light-text-color-darker) !important;
+}
+
+.clear-btn-icon {
+    top: 9px !important /*required*/;
+    right: 9px !important /*required*/;
+}
+
+.content tr.search-hit,
+.search-hit,
+.md-search-hit,
+/*.md-search-hit.md-search-select,*/
+.md-search-select,
+.ty-file-search-match-text {
+    background-color: var(--boxes-darkest);
+    color: white;
+    padding: 0.2rem 0.1rem;
+    border-radius: 0.2rem;
+}
+
+.md-search-hit.md-search-select {
+    background-color: var(--select-text-bg-color);
+} /* distinguishes text search selected from text search matched */
+
+/*ZOOM HINT*/
+
+#zoom-hint {
+    border-radius: 0.3rem;
+    border: solid 1px var(--borders);
+    user-select: none;
+    box-shadow: rgba(116, 129, 141, 0.08) 0px 2px 6px 0px;
+}
+
+#zoom-hint #zoom-hint-reset {
+    border-left: none;
+    font-weight: 600;
+}
+
+/*SEARCHPANEL*/
+
+#md-searchpanel {
+    border-bottom: 1px solid var(--borders);
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+    max-height: 46px;
+}
+
+.mac-seamless-mode #md-searchpanel {
+    max-height: 70px;
+}
+
+#md-searchpanel.searchpanel-replace-mode {
+    max-height: 84px;
+}
+
+.mac-seamless-mode #md-searchpanel.searchpanel-replace-mode {
+    max-height: 108px;
+}
+
+#md-searchpanel input {
+    height: 2rem;
+    margin: 0rem !important;
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+}
+
+#md-searchpanel .input-group-addon {
+    height: 2rem;
+}
+
+#md-searchpanel .input-group-addon.close-btn {
+    padding-left: 8px;
+}
+
+.unibody-window #md-searchpanel .btn {
+    line-height: 2rem;
+}
+
+.searchpanel-search-option-btn {
+    top: 9px;
+    border: none;
+    color: var(--light-text-color-darker) !important /*required*/;
+    transition-duration: 0.3s;
+}
+
+.searchpanel-search-option-btn:hover {
+    color: var(--primary-color) !important /*required*/;
+    background-color: transparent !important /*required*/;
+}
+
+.searchpanel-search-option-btn.select,
+.searchpanel-search-option-btn.active {
+    color: white !important;
+    background-color: var(--primary-color) !important;
+}
+
+#searchpanel-regexp-option-btn {
+    right: 57px;
+}
+
+#searchpanel-case-option-btn {
+    right: 33px;
+}
+
+#searchpanel-word-option-btn {
+    right: 9px;
+}
+
+#searchpanel-word-option-btn,
+#searchpanel-case-option-btn {
+    background: none;
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+    box-shadow: none;
+}
+
+/*SELECT*/
+/*TEXT INPUT*/
+/*NUMBER INPUT*/
+
+/* the input #md-grid-height doesn't have a type attached for some reason and needs to be adressed seperately */
+
+html select,
+html input[type="text"],
+html input[type="number"],
+#md-grid-height {
+    background-color: var(--bg-color) !important;
+    border-radius: 0.3rem !important;
+    border: solid 1px var(--boxes-darker) !important;
+    box-shadow: none !important;
+    color: var(--text-color) !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    padding: 0.3rem !important;
+    height: 2.1rem !important;
+    transition-duration: 0.2s;
+    transition-property: border;
+    cursor: text;
+}
+
+select {
+    cursor: pointer !important;
+}
+
+input[type="text"],
+input[type="number"] {
+    cursor: text;
+}
+
+html select:hover,
+html input[type="text"]:hover,
+html input[type="number"]:hover,
+#md-grid-height:hover {
+    background-color: var(--bg-color) !important;
+    border-radius: 0.3rem !important;
+    border-color: var(--boxes-darker2) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+    color: var(--text-color) !important;
+    font-size: 0.9rem !important;
+}
+
+html select:focus,
+html input[type="text"]:focus,
+html input[type="number"]:focus,
+#md-grid-height:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+#md-grid-height::placeholder {
+    color: var(--light-text-color-darker) !important;
+}
+
+input[disabled],
+input[disabled]:hover,
+input[disabled]:focus {
+    cursor: not-allowed;
+}
+
+/*TEXTAREA*/
+
+textarea {
+    background-color: transparent;
+    border: solid 1px var(--boxes-darker);
+    border-radius: 0.3rem;
+    transition-duration: 0.2s;
+}
+
+textarea:hover {
+    border-color: var(--boxes-darker2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    outline: none;
+}
+
+/*MODAL*/
+
+.modal-header,
+#common-dialog .modal-header {
+    border-bottom: solid 1px var(--borders);
+    padding-bottom: 15px;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    user-select: none;
+}
+
+.modal-body {
+    font-size: 0.9rem;
+    color: var(--light-text-color-darker);
+    user-select: none;
+}
+
+.modal-content {
+    box-shadow: rgba(116, 129, 141, 0.15) 0px 3px 10px 0px;
+    border: solid 1px var(--boxes-darker);
+    border-radius: 0.3rem;
+}
+
+.modal-footer {
+    border-top: solid 1px var(--borders);
+}
+
+.modal-open .modal.fade.in {
+    background: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/*LANGS*/
+
+.ty-spell-check-panel-item {
+    font-weight: 500;
+    transition-duration: 0.2s;
+    transition-property: background-color, color;
+}
+
+.ty-spell-check-panel-item:hover {
+    color: var(--primary-color);
+    background-color: var(--boxes);
+}
+
+.ty-spell-check-panel-item.ty-active {
+    background-color: var(--boxes);
+}
+
+/*TOOLTIP*/
+
+.ty-tooltip {
+    background-color: var(--bg-color) !important;
+    border-radius: 0.3rem !important;
+    border: 1px solid var(--borders) !important;
+    -webkit-filter: none !important;
+    filter: none;
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+}
+
+/*FOOTER*/
+
+.footer-item:hover {
+    background-color: var(--boxes) !important;
+}
+
+#footer-word-count-info {
+    padding: 4px 0;
+}
+
+.footer-word-count-info-line {
+    padding: 0.25rem;
+    line-height: 1.6rem;
+}
+
+#footer-word-count-info tr {
+    font-weight: 500;
+    font-size: 0.8rem;
+    transition-duration: 0.2s;
+    transition-property: all;
+}
+
+#footer-word-count-info tr td:nth-child(1) {
+    padding: 0rem;
+    padding-right: 1rem;
+}
+
+#footer-word-count-info .ty-footer-word-count-all tr:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--boxes) !important;
+}
+
+/*MEGAMENU*/
+
+.megamenu-menu {
+    box-shadow: none;
+    background-color: var(--boxes);
+    border-right: 1px solid var(--borders);
+}
+
+.megamenu-opened .megamenu-menu {
+    left: 0px;
+}
+
+#megamenu-content {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#megamenu-menu-list {
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+}
+
+#megamenu-menu-list li a {
+    color: var(--text-color);
+    height: 2rem;
+    line-height: 1.8rem;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+}
+
+#megamenu-menu-list li a:hover {
+    background-color: var(--borders);
+}
+
+#megamenu-menu-list li a.active {
+    color: var(--primary-color);
+    background-color: white;
+    outline: solid 1px var(--borders);
+}
+
+#megamenu-menu-list .divider {
+    background-color: var(--borders);
+    margin: 16px 0 0 0;
+}
+
+.megamenu-menu-list .saved #m-saved {
+    cursor: default;
+}
+
+.megamenu-menu-list .saved #m-saved .fa {
+    color: var(--primary-color);
+}
+
+.megamenu-menu-list .saved #m-saved:hover {
+    background-color: transparent;
+}
+
+.megamenu-menu-list #m-close:hover {
+    color: var(--danger-color);
+}
+
+.megamenu-menu-header {
+    border-bottom: solid 1px var(--borders);
+    margin-bottom: 1.2rem;
+    height: 74px;
+    transition-duration: 0.3s;
+}
+
+.megamenu-menu-header:hover {
+    background-color: var(--borders);
+}
+
+.megamenu-menu-header #megamenu-menu-header-title {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 16px;
+    left: 56px;
+    top: 24px;
+}
+
+#megamenu-back-btn {
+    color: var(--text-color);
+    font-size: 16px;
+    left: 24px;
+    top: 24px;
+}
+
+.megamenu-opened header {
+    background-color: var(--bg-color);
+    background-image: none;
+}
+
+.megamenu-content {
+    background-color: var(--bg-color);
+    background-image: none;
+}
+
+.megamenu-menu-panel:not(:first-of-type) {
+    margin-top: 2rem;
+}
+
+.megamenu-menu-panel h1 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin: 1rem 0rem 0.4rem 0rem;
+}
+
+.megamenu-menu-panel h2 {
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin: 1rem 0rem 0.4rem 0rem;
+}
+
+/*recent files*/
+
+#recent-file-panel tbody tr {
+    font-weight: 600;
+    transition-duration: 0.4s;
+}
+
+#recent-file-panel tbody tr:hover,
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: var(--primary-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: var(--boxes);
+}
+
+/*about help*/
+
+.about-content-slogon {
+    color: var(--light-text-color);
+}
+
+/*for the god himself*/
+.about-content-slogon span {
+    color: var(--primary-color) !important;
+}
+
+#about-content tbody tr {
+    font-weight: 500;
+    transition-duration: 0.4s;
+}
+
+#about-content tbody tr:hover {
+    color: var(--primary-color);
+    background-color: var(--boxes) !important /*required important*/;
+}
+
+.long-btn {
+    margin-bottom: 12px;
+    margin-left: 2px;
+    box-shadow: rgba(116, 129, 141, 0.1) 2px 2px 6px;
+    background-color: white;
+    border: 1px solid var(--borders);
+    border-radius: 0.3rem;
+    padding: 1rem;
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.long-btn:hover {
+    background-color: var(--primary-color);
+    border: 1px solid transparent;
+    color: white !important /*important required*/;
+    box-shadow: rgba(116, 129, 141, 0.1) 2px 2px 6px,
+        rgba(26, 168, 139, 0.2) 0px 0px 10px;
+}
+
+#m-import-local:hover .preference-item-hint {
+    color: white;
+    opacity: 0.7;
+}
+
+#recent-file-panel-action-btn {
+    height: 34px;
+    border: none;
+    background-color: var(--boxes);
+}
+
+#theme-preview-grid {
+    max-width: none;
+    padding: 1.5rem;
+    background-color: var(--boxes);
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1.5rem;
+}
+
+.theme-preview-div {
+    border: none;
+    border-radius: 0.4rem;
+    box-shadow: rgba(116, 129, 141, 0.1) 0px 0px 15px;
+    margin: 0rem;
+    transition-duration: 0.3s;
+}
+
+.theme-preview-div:hover {
+    box-shadow: rgba(116, 129, 141, 0.5) 3px 8px 15px;
+    cursor: pointer;
+    transform: rotate3d(1, -0.2, 0.2, 15deg);
+}
+
+.theme-preview-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4rem;
+}
+
+.theme-preview-content html {
+    width: 100%;
+    height: 100%;
+}
+
+.theme-preview-div.active .fa {
+    color: var(--primary-color);
+    bottom: 4px;
+    left: 4px;
+}
+
+.theme-preview-div .fa-check-circle:before {
+    background-color: var(--bg-color);
+    padding: 0px 2px;
+    border-radius: 1rem;
+}
+
+.megamenu-menu-panel tbody tr {
+    border-radius: 0.3rem;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+}
+
+.megamenu-menu-panel tbody tr:hover {
+    background-color: var(--borders) !important /*required important*/;
+}
+
+/*MIN MAX CLOSE*/
+#w-min,
+#w-max,
+#w-restore,
+#w-close {
+    border-radius: 0px !important;
+    font-size: 10px !important;
+    width: 46px !important;
+    height: 29px !important;
+}
+
+.btn.toolbar-icon svg,
+.btn.toolbar-icon .ty-icon {
+    position: relative;
+    top: 2px;
+}
+
+#w-close.btn.toolbar-icon .ty-icon {
+    left: 1px;
+}
+
+#w-close:hover {
+    background-color: var(--danger-color) !important;
+    color: white !important;
+}
+
+/*EXTRA STUFF*/
+
+a[type="page-link"] {
+    display: block;
+    background-color: white;
+    box-shadow: rgba(116, 129, 141, 0.2) 0px 3px 8px 0px;
+    border: 1px solid var(--borders);
+    border-radius: 0.3rem;
+    padding: 1rem;
+
+    font-weight: 600;
+
+    transition-duration: 0.2s;
+    transition-property: border, box-shadow;
+}
+
+a[type="page-link"]:hover {
+    box-shadow: rgba(116, 129, 161, 0.1) 0px 3px 8px 0px;
+    border: 1px solid var(--primary-color);
+}
+
+p[type="description"] {
+    color: var(--light-text-color);
+}
+
+/*kbd*/
+
+kbd {
+    font-family: var(--font-family);
+}
+
 
  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
 </style><title>LU分解与并行计算</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><!--more--><h2 id='介绍'><span>介绍</span></h2><p><span>在线性代数与数值分析中，LU分解是矩阵分解的一种，将一个矩阵分解为一个下三角矩阵和一个上三角矩阵的乘积，有时需要再乘上一个置换矩阵。LU分解可以被视为高斯消元法的矩阵形式。在数值计算上，LU分解经常被用来解线性方程组、且在求逆矩阵和计算行列式中都是一个关键的步骤。</span></p><p><span>LU矩阵分解是一种常用的矩阵分解方法，用于将一个矩阵分解为一个下三角矩阵L和一个上三角矩阵U的乘积。其原理可以简述如下：</span></p><p><span>给定一个n×n的矩阵A，LU分解的目标是找到两个矩阵L和U，使得A = LU。</span></p><ol start='' ><li><p><span>首先，我们将矩阵A写成如下形式：</span></p><p><span>A = [a11  a12  a13 ...  a1n]</span>
+<div id='write'  class=''><!--more--><link rel="stylesheet" href="/footer.css"><h2 id='介绍'><span>介绍</span></h2><p><span>在线性代数与数值分析中，LU分解是矩阵分解的一种，将一个矩阵分解为一个下三角矩阵和一个上三角矩阵的乘积，有时需要再乘上一个置换矩阵。LU分解可以被视为高斯消元法的矩阵形式。在数值计算上，LU分解经常被用来解线性方程组、且在求逆矩阵和计算行列式中都是一个关键的步骤。</span></p><p><span>LU矩阵分解是一种常用的矩阵分解方法，用于将一个矩阵分解为一个下三角矩阵L和一个上三角矩阵U的乘积。其原理可以简述如下：</span></p><p><span>给定一个n×n的矩阵A，LU分解的目标是找到两个矩阵L和U，使得A = LU。</span></p><ol start='' ><li><p><span>首先，我们将矩阵A写成如下形式：</span></p><p><span>A = [a11  a12  a13 ...  a1n]</span>
 <span>    [a21  a22  a23 ...  a2n]</span>
 <span>    [a31  a32  a33 ...  a3n]</span>
 <span>    [...   ...   ... ...   ...]</span>
-<span>    [an1  an2  an3 ...  ann]</span></p><p>&nbsp;</p></li><li><p><span>然后，我们通过消元的方式将A分解为L和U。消元过程可以理解为对A进行一系列的行变换，使得A</span></p><p>&nbsp;</p><p><span>的下三角部分变为0，而上三角部分保持原样。在每一次消元操作中，我们选择一个主元（通常是矩阵的对角线元素），并用它来消除矩阵的其他元素。</span></p></li><li><p><span>消元的过程中，我们通过一系列的行变换将A变换为U，其中U是一个上三角矩阵。行变换包括以下步骤：选择一个主元，将主元所在列的下方元素消为0，重复这个过程直到得到上三角矩阵U。</span></p></li><li><p><span>在消元的过程中，我们记录下所做的行变换，并将其应用到一个单位下三角矩阵上，得到矩阵L。L是一个下三角矩阵，其对角线元素为1。</span></p></li><li><p><span>最终，我们得到了矩阵A的LU分解，即A = LU，其中L是一个下三角矩阵，U是一个上三角矩阵。</span></p></li></ol><p><span>LU矩阵分解的主要优点是可以减少求解线性方程组的计算量，特别是在需要多次求解相同系数矩阵的线性方程组时。通过LU分解，我们可以将原始的线性方程组转化为两个较简单的方程组，从而更高效地求解解析解或进行数值计算。</span></p><p>&nbsp;</p><p><span>接下来，我们用算法来描述这一过程。我们将其分为串行算法和并行算法。介绍完后，我们会比较它们的性能，并在此基础上进行分析。</span></p><h2 id='串行算法思路'><span>串行算法思路</span></h2><p><span>对于一个 n 阶非奇异方阵 A=[a</span><sub><span>ij</span></sub><span>]，对 A 进行 LU 分解是求一个主对角元素全为 1 的下三 角方阵 L=[l</span><sub><span>ij</span></sub><span>]与上三角方阵 U=[u</span><sub><span>ij</span></sub><span>]，使 A=LU。设 A 的各阶主子行列式皆非零，U 和 L 的元 素可由下面的递推式求出：</span></p><p><span>在计算过程中，首先计算出 U 的第一行元素，然后算出 L 的第一列元素，修改相应 A 的元素；再算出 U 的第二行，L 的第二列…，直至算出 u</span><sub><span>nn</span></sub><span> 为止。若一次乘法和加法运算或 一次除法运算时间为一个单位时间，则下述 LU 分解的串行算法时间复杂度为O(n</span><sup><span>3</span></sup><span>):</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="C" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">luDecomposition</span>(<span class="cm-variable-3">double**</span> <span class="cm-variable">a</span>, <span class="cm-variable-3">double**</span> <span class="cm-variable">l</span>, <span class="cm-variable-3">double**</span> <span class="cm-variable">u</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">n</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">/*</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* LU分解函数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* 参数:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* &nbsp; - a: 输入矩阵，n×n的二维数组</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* &nbsp; - l: 下三角矩阵，n×n的二维数组，作为输出参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* &nbsp; - u: 上三角矩阵，n×n的二维数组，作为输出参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* &nbsp; - n: 矩阵的维度</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">*/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// LU分解的第一步：计算下三角矩阵L和上三角矩阵U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">k</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">k</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">k</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 计算下三角矩阵L的第k列（不包括对角线元素）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">k</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">k</span>] <span class="cm-operator">/</span> <span class="cm-variable">a</span>[<span class="cm-variable">k</span>][<span class="cm-variable">k</span>]; &nbsp;<span class="cm-comment">// 计算L的元素值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 计算上三角矩阵U的第k行和第k列（包括对角线元素）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>] <span class="cm-operator">-</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">k</span>] <span class="cm-operator">*</span> <span class="cm-variable">a</span>[<span class="cm-variable">k</span>][<span class="cm-variable">j</span>]; &nbsp;<span class="cm-comment">// 计算U的元素值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 构建下三角矩阵L和上三角矩阵U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">i</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>]; &nbsp;<span class="cm-comment">// L的元素值为a中对应位置的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  } <span class="cm-keyword">else</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">u</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>]; &nbsp;<span class="cm-comment">// U的元素值为a中对应位置的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span>][<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">1.0</span>; &nbsp;<span class="cm-comment">// L的对角线元素为1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 777px;"></div><div class="CodeMirror-gutters" style="display: none; height: 777px;"></div></div></div></pre><p>&nbsp;</p><h2 id='并行算法思路'><span>并行算法思路</span></h2><h3 id='使用工具'><span>使用工具</span></h3><p><span>我们使用OpenMP来进行并行化计算</span></p><h3 id='实现原理'><span>实现原理</span></h3><p><span>在 LU 分解的过程中，主要的计算是利用主行 i 对其余各行 j，(j&gt;i)作初等行变换，各行 计算之间没有数据相关关系，因此可以对矩阵 A 按行划分来实现并行计算。考虑到在计算 过程中处理器之间的负载均衡，对 A 采用行交叉划分：设处理器个数为 p，矩阵 A 的阶数为 n，m = n / p，对矩阵 A 行交叉划分后，编号为 i(i=0,1,…,p-1)的处理器存有 A 的第 i, i+p,…, i+(m-1)p 行。然后依次以第 0,1,…,n-1 行作为主行，将其广播给所有处理器，各处理器利用 主行对其部分行向量做行变换，这实际上是各处理器轮流选出主行并广播。若以编号为 my_rank 的处理器的第 i 行元素作为主行，并将它广播给所有处理器，则编号大于等于 my_rank 的处理器利用主行元素对其第 i+1,…,m-1 行数据做行变换，其它处理器利用主行元 素对其第 i,…,m-1 行数据做行变换。具体并行算法框架描述如下：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="C" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">luDecomposition</span>(<span class="cm-variable-3">double</span> <span class="cm-variable-3">*</span><span class="cm-variable">a</span>, <span class="cm-variable-3">double</span> <span class="cm-variable-3">*</span><span class="cm-variable">l</span>, <span class="cm-variable-3">double</span> <span class="cm-variable-3">*</span><span class="cm-variable">u</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">n</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">/*</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* LU分解函数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* 参数:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* &nbsp; - a: 输入矩阵，n×n的一维数组表示</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* &nbsp; - l: 下三角矩阵，n×n的一维数组表示，作为输出参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* &nbsp; - u: 上三角矩阵，n×n的一维数组表示，作为输出参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* &nbsp; - n: 矩阵的维度</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">*/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-3">double</span> <span class="cm-variable-3">*</span><span class="cm-variable">a_copy</span> <span class="cm-operator">=</span> <span class="cm-variable">malloc</span>(<span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>) <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">memcpy</span>(<span class="cm-variable">a_copy</span>, <span class="cm-variable">a</span>, <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>) <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+<span>    [an1  an2  an3 ...  ann]</span></p><p>&nbsp;</p></li><li><p><span>然后，我们通过消元的方式将A分解为L和U。消元过程可以理解为对A进行一系列的行变换，使得A</span></p><p>&nbsp;</p><p><span>的下三角部分变为0，而上三角部分保持原样。在每一次消元操作中，我们选择一个主元（通常是矩阵的对角线元素），并用它来消除矩阵的其他元素。</span></p></li><li><p><span>消元的过程中，我们通过一系列的行变换将A变换为U，其中U是一个上三角矩阵。行变换包括以下步骤：选择一个主元，将主元所在列的下方元素消为0，重复这个过程直到得到上三角矩阵U。</span></p></li><li><p><span>在消元的过程中，我们记录下所做的行变换，并将其应用到一个单位下三角矩阵上，得到矩阵L。L是一个下三角矩阵，其对角线元素为1。</span></p></li><li><p><span>最终，我们得到了矩阵A的LU分解，即A = LU，其中L是一个下三角矩阵，U是一个上三角矩阵。</span></p></li></ol><p><span>LU矩阵分解的主要优点是可以减少求解线性方程组的计算量，特别是在需要多次求解相同系数矩阵的线性方程组时。通过LU分解，我们可以将原始的线性方程组转化为两个较简单的方程组，从而更高效地求解解析解或进行数值计算。</span></p><p>&nbsp;</p><p><span>接下来，我们用算法来描述这一过程。我们将其分为串行算法和并行算法。介绍完后，我们会比较它们的性能，并在此基础上进行分析。</span></p><h2 id='串行算法思路'><span>串行算法思路</span></h2><p><span>对于一个 n 阶非奇异方阵 A=[a</span><sub><span>ij</span></sub><span>]，对 A 进行 LU 分解是求一个主对角元素全为 1 的下三 角方阵 L=[l</span><sub><span>ij</span></sub><span>]与上三角方阵 U=[u</span><sub><span>ij</span></sub><span>]，使 A=LU。设 A 的各阶主子行列式皆非零，U 和 L 的元 素可由下面的递推式求出：</span></p><p><span>在计算过程中，首先计算出 U 的第一行元素，然后算出 L 的第一列元素，修改相应 A 的元素；再算出 U 的第二行，L 的第二列…，直至算出 u</span><sub><span>nn</span></sub><span> 为止。若一次乘法和加法运算或 一次除法运算时间为一个单位时间，则下述 LU 分解的串行算法时间复杂度为O(n</span><sup><span>3</span></sup><span>):</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="C" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 26.5px; left: 20px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">luDecomposition</span>(<span class="cm-variable-3">double**</span> <span class="cm-variable">a</span>, <span class="cm-variable-3">double**</span> <span class="cm-variable">l</span>, <span class="cm-variable-3">double**</span> <span class="cm-variable">u</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">n</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">/*</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* LU分解函数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* 参数:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* &nbsp; - a: 输入矩阵，n×n的二维数组</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* &nbsp; - l: 下三角矩阵，n×n的二维数组，作为输出参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* &nbsp; - u: 上三角矩阵，n×n的二维数组，作为输出参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* &nbsp; - n: 矩阵的维度</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">*/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// LU分解的第一步：计算下三角矩阵L和上三角矩阵U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">k</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">k</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">k</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 计算下三角矩阵L的第k列（不包括对角线元素）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">k</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">k</span>] <span class="cm-operator">/</span> <span class="cm-variable">a</span>[<span class="cm-variable">k</span>][<span class="cm-variable">k</span>]; &nbsp;<span class="cm-comment">// 计算L的元素值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 计算上三角矩阵U的第k行和第k列（包括对角线元素）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>] <span class="cm-operator">-</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">k</span>] <span class="cm-operator">*</span> <span class="cm-variable">a</span>[<span class="cm-variable">k</span>][<span class="cm-variable">j</span>]; &nbsp;<span class="cm-comment">// 计算U的元素值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 构建下三角矩阵L和上三角矩阵U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">i</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>]; &nbsp;<span class="cm-comment">// L的元素值为a中对应位置的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  } <span class="cm-keyword">else</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">u</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>]; &nbsp;<span class="cm-comment">// U的元素值为a中对应位置的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span>][<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">1.0</span>; &nbsp;<span class="cm-comment">// L的对角线元素为1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 925px;"></div><div class="CodeMirror-gutters" style="display: none; height: 925px;"></div></div></div></pre><p>&nbsp;</p><h2 id='并行算法思路'><span>并行算法思路</span></h2><h3 id='使用工具'><span>使用工具</span></h3><p><span>我们使用OpenMP来进行并行化计算</span></p><h3 id='实现原理'><span>实现原理</span></h3><p><span>在 LU 分解的过程中，主要的计算是利用主行 i 对其余各行 j，(j&gt;i)作初等行变换，各行 计算之间没有数据相关关系，因此可以对矩阵 A 按行划分来实现并行计算。考虑到在计算 过程中处理器之间的负载均衡，对 A 采用行交叉划分：设处理器个数为 p，矩阵 A 的阶数为 n，m = n / p，对矩阵 A 行交叉划分后，编号为 i(i=0,1,…,p-1)的处理器存有 A 的第 i, i+p,…, i+(m-1)p 行。然后依次以第 0,1,…,n-1 行作为主行，将其广播给所有处理器，各处理器利用 主行对其部分行向量做行变换，这实际上是各处理器轮流选出主行并广播。若以编号为 my_rank 的处理器的第 i 行元素作为主行，并将它广播给所有处理器，则编号大于等于 my_rank 的处理器利用主行元素对其第 i+1,…,m-1 行数据做行变换，其它处理器利用主行元 素对其第 i,…,m-1 行数据做行变换。具体并行算法框架描述如下：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="C" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 26.5px; left: 20px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">luDecomposition</span>(<span class="cm-variable-3">double</span> <span class="cm-variable-3">*</span><span class="cm-variable">a</span>, <span class="cm-variable-3">double</span> <span class="cm-variable-3">*</span><span class="cm-variable">l</span>, <span class="cm-variable-3">double</span> <span class="cm-variable-3">*</span><span class="cm-variable">u</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">n</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">/*</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* LU分解函数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* 参数:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* &nbsp; - a: 输入矩阵，n×n的一维数组表示</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* &nbsp; - l: 下三角矩阵，n×n的一维数组表示，作为输出参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* &nbsp; - u: 上三角矩阵，n×n的一维数组表示，作为输出参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">* &nbsp; - n: 矩阵的维度</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">*/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-3">double</span> <span class="cm-variable-3">*</span><span class="cm-variable">a_copy</span> <span class="cm-operator">=</span> <span class="cm-variable">malloc</span>(<span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>) <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">memcpy</span>(<span class="cm-variable">a_copy</span>, <span class="cm-variable">a</span>, <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>) <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
 </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// LU分解的第一步：计算下三角矩阵L和上三角矩阵U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">k</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">k</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">k</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 计算下三角矩阵L的第k列（不包括对角线元素）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">k</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">k</span>] <span class="cm-operator">/</span> <span class="cm-variable">a</span>[<span class="cm-variable">k</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">k</span>]; <span class="cm-comment">// 计算L的元素值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 计算上三角矩阵U的第k行和第k列（包括对角线元素）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-variable">k</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>] <span class="cm-operator">=</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>] <span class="cm-operator">-</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">k</span>] <span class="cm-operator">*</span> <span class="cm-variable">a</span>[<span class="cm-variable">k</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>]; <span class="cm-comment">// 计算U的元素值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// 构建下三角矩阵L和上三角矩阵U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-meta">#pragma omp parallel for</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">#pragma omp parallel for</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">i</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>]; <span class="cm-comment">// L的元素值为a中对应位置的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  } <span class="cm-keyword">else</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">u</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>]; <span class="cm-comment">// U的元素值为a中对应位置的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">1.0</span>; <span class="cm-comment">// L的对角线元素为1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">memcpy</span>(<span class="cm-variable">a</span>, <span class="cm-variable">a_copy</span>, <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>) <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">free</span>(<span class="cm-variable">a_copy</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 903px;"></div><div class="CodeMirror-gutters" style="display: none; height: 903px;"></div></div></div></pre><h2 id='计时框架'><span>计时框架</span></h2><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="C" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.5px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">main</span>() {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">srand</span>(<span class="cm-variable">time</span>(<span class="cm-number">0</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">batchSize</span> <span class="cm-operator">=</span> <span class="cm-number">100</span>; &nbsp;<span class="cm-comment">// 测试批量大小</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">n</span> <span class="cm-operator">=</span> <span class="cm-number">200</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 矩阵维度</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// 构建下三角矩阵L和上三角矩阵U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-meta">#pragma omp parallel for</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">#pragma omp parallel for</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">i</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>]; <span class="cm-comment">// L的元素值为a中对应位置的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  } <span class="cm-keyword">else</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">u</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>]; <span class="cm-comment">// U的元素值为a中对应位置的值</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">1.0</span>; <span class="cm-comment">// L的对角线元素为1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">memcpy</span>(<span class="cm-variable">a</span>, <span class="cm-variable">a_copy</span>, <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>) <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">free</span>(<span class="cm-variable">a_copy</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 1075px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1075px;"></div></div></div></pre><h2 id='计时框架'><span>计时框架</span></h2><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="C" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 26.5px; left: 20px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">main</span>() {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">srand</span>(<span class="cm-variable">time</span>(<span class="cm-number">0</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">batchSize</span> <span class="cm-operator">=</span> <span class="cm-number">100</span>; &nbsp;<span class="cm-comment">// 测试批量大小</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">n</span> <span class="cm-operator">=</span> <span class="cm-number">200</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 矩阵维度</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
 </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">clock_t</span> <span class="cm-variable">whole_time</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
-</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">batch</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">batch</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">batchSize</span>; <span class="cm-variable">batch</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 生成随机矩阵A</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">double*</span> <span class="cm-variable">a</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">double*</span>)<span class="cm-variable">calloc</span>(<span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>, <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">double*</span> <span class="cm-variable">l</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">double*</span>)<span class="cm-variable">malloc</span>(<span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">double*</span> <span class="cm-variable">u</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">double*</span>)<span class="cm-variable">malloc</span>(<span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">row</span> <span class="cm-operator">=</span> <span class="cm-variable">i</span> <span class="cm-operator">/</span> <span class="cm-variable">n</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">col</span> <span class="cm-operator">=</span> <span class="cm-variable">i</span> <span class="cm-operator">%</span> <span class="cm-variable">n</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">rand</span>() <span class="cm-operator">%</span> <span class="cm-number">1000</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; &nbsp;<span class="cm-comment">// 生成0到99之间的随机数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable">u</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">rand</span>() <span class="cm-operator">%</span> <span class="cm-number">1000</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; &nbsp;<span class="cm-comment">// 生成0到99之间的随机数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">row</span> <span class="cm-operator">==</span> <span class="cm-variable">col</span>) <span class="cm-variable">l</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">1</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">row</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">col</span>) <span class="cm-variable">l</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">row</span> <span class="cm-operator">&gt;</span> <span class="cm-variable">col</span>) <span class="cm-variable">u</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">size_t</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">size_t</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">size_t</span> <span class="cm-variable">k</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">k</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">k</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>] <span class="cm-operator">+=</span> <span class="cm-variable">l</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">k</span>] <span class="cm-operator">*</span> <span class="cm-variable">u</span>[<span class="cm-variable">k</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  } </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 分配内存存储结果矩阵L和U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 进行LU分解</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">clock_t</span> <span class="cm-variable">lu_start_time</span> <span class="cm-operator">=</span> <span class="cm-variable">clock</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 真正的运算地方</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">luDecomposition</span>(<span class="cm-variable">a</span>, <span class="cm-variable">l</span>, <span class="cm-variable">u</span>, <span class="cm-variable">n</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">clock_t</span> <span class="cm-variable">lu_end_time</span> <span class="cm-operator">=</span> <span class="cm-variable">clock</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">whole_time</span> <span class="cm-operator">+=</span> <span class="cm-variable">lu_end_time</span> <span class="cm-operator">-</span> <span class="cm-variable">lu_start_time</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 检验分解是否正确，如果不正确，算法也就失去了意义</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">assert</span>(<span class="cm-variable">verifyLU</span>(<span class="cm-variable">a</span>, <span class="cm-variable">l</span>, <span class="cm-variable">u</span>, <span class="cm-variable">n</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 释放内存</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">free</span>(<span class="cm-variable">a</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">free</span>(<span class="cm-variable">l</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">free</span>(<span class="cm-variable">u</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">printf</span>(<span class="cm-string">"whole lu time: %lf seconds\n"</span>, <span class="cm-number">1.0</span> <span class="cm-operator">*</span> <span class="cm-variable">whole_time</span> <span class="cm-operator">/</span> <span class="cm-variable">CLOCKS_PER_SEC</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">return</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 966px;"></div><div class="CodeMirror-gutters" style="display: none; height: 966px;"></div></div></div></pre><p>&nbsp;</p><h2 id='结果分析与比较'><span>结果分析与比较</span></h2><p><span>经过一番运行，我们发现运行耗时减少了不少：</span></p><p><span>优化后的代码通过使用OpenMP并行化指令，将计算下三角矩阵L和上三角矩阵U的过程并行化，从而显著提高了运行速度。通过在并行区域内使用独立的</span><code>#pragma omp for</code><span>指令，我们成功解决了原始代码中嵌套并行指令的问题。</span></p><p><span>通过并行化循环，我们能够利用多个线程同时执行迭代操作，充分发挥多核处理器的计算能力。这种优化特别适用于具有大规模矩阵的LU分解操作，因为并行化可以将计算负载分配给多个处理单元，从而加速计算过程。</span></p><p><span>需要注意的是，在使用OpenMP并行化指令时，我们需要考虑共享数据的访问和可能的竞态条件。如果多个线程同时访问和修改相同的数据，可能会导致错误的结果。在本例中，通过将</span><code>#pragma omp parallel</code><span>放置在两个独立的</span><code>#pragma omp for</code><span>之外，我们确保了每个线程独立地访问和修改数据，避免了竞态条件的问题。</span></p><p><span>通过优化代码，我们能够更好地利用计算资源，提高程序的性能。这对于需要处理大规模数据和复杂计算任务的应用程序尤为重要。然而，要确保正确性，我们需要仔细考虑并行化操作对数据一致性的影响，并确保适当的同步机制和数据访问策略。</span></p><p><span>通过合理地使用并行化技术，我们可以显著提高程序的运行速度，从而更高效地完成计算任务。这为处理大规模数据和复杂计算问题的应用程序提供了有力的工具，促进了科学研究和工程实践的发展。</span></p></div></div>
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">batch</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">batch</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">batchSize</span>; <span class="cm-variable">batch</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 生成随机矩阵A</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">double*</span> <span class="cm-variable">a</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">double*</span>)<span class="cm-variable">calloc</span>(<span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>, <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">double*</span> <span class="cm-variable">l</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">double*</span>)<span class="cm-variable">malloc</span>(<span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">double*</span> <span class="cm-variable">u</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">double*</span>)<span class="cm-variable">malloc</span>(<span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-variable-3">double</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">row</span> <span class="cm-operator">=</span> <span class="cm-variable">i</span> <span class="cm-operator">/</span> <span class="cm-variable">n</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">col</span> <span class="cm-operator">=</span> <span class="cm-variable">i</span> <span class="cm-operator">%</span> <span class="cm-variable">n</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable">l</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">rand</span>() <span class="cm-operator">%</span> <span class="cm-number">1000</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; &nbsp;<span class="cm-comment">// 生成0到99之间的随机数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-variable">u</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">rand</span>() <span class="cm-operator">%</span> <span class="cm-number">1000</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>; &nbsp;<span class="cm-comment">// 生成0到99之间的随机数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">row</span> <span class="cm-operator">==</span> <span class="cm-variable">col</span>) <span class="cm-variable">l</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">1</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">row</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">col</span>) <span class="cm-variable">l</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">row</span> <span class="cm-operator">&gt;</span> <span class="cm-variable">col</span>) <span class="cm-variable">u</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">size_t</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">size_t</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">size_t</span> <span class="cm-variable">k</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">k</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">k</span><span class="cm-operator">++</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">a</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>] <span class="cm-operator">+=</span> <span class="cm-variable">l</span>[<span class="cm-variable">i</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">k</span>] <span class="cm-operator">*</span> <span class="cm-variable">u</span>[<span class="cm-variable">k</span> <span class="cm-operator">*</span> <span class="cm-variable">n</span> <span class="cm-operator">+</span> <span class="cm-variable">j</span>];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  } </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 分配内存存储结果矩阵L和U</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 进行LU分解</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">clock_t</span> <span class="cm-variable">lu_start_time</span> <span class="cm-operator">=</span> <span class="cm-variable">clock</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 真正的运算地方</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">luDecomposition</span>(<span class="cm-variable">a</span>, <span class="cm-variable">l</span>, <span class="cm-variable">u</span>, <span class="cm-variable">n</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">clock_t</span> <span class="cm-variable">lu_end_time</span> <span class="cm-operator">=</span> <span class="cm-variable">clock</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">whole_time</span> <span class="cm-operator">+=</span> <span class="cm-variable">lu_end_time</span> <span class="cm-operator">-</span> <span class="cm-variable">lu_start_time</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 检验分解是否正确，如果不正确，算法也就失去了意义</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">assert</span>(<span class="cm-variable">verifyLU</span>(<span class="cm-variable">a</span>, <span class="cm-variable">l</span>, <span class="cm-variable">u</span>, <span class="cm-variable">n</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// 释放内存</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">free</span>(<span class="cm-variable">a</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">free</span>(<span class="cm-variable">l</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">free</span>(<span class="cm-variable">u</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">printf</span>(<span class="cm-string">"whole lu time: %lf seconds\n"</span>, <span class="cm-number">1.0</span> <span class="cm-operator">*</span> <span class="cm-variable">whole_time</span> <span class="cm-operator">/</span> <span class="cm-variable">CLOCKS_PER_SEC</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">return</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 1175px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1175px;"></div></div></div></pre><p>&nbsp;</p><h2 id='结果分析与比较'><span>结果分析与比较</span></h2><p><span>经过一番运行，我们发现运行耗时减少了不少：</span></p><p><span>优化后的代码通过使用OpenMP并行化指令，将计算下三角矩阵L和上三角矩阵U的过程并行化，从而显著提高了运行速度。通过在并行区域内使用独立的</span><code>#pragma omp for</code><span>指令，我们成功解决了原始代码中嵌套并行指令的问题。</span></p><p><span>通过并行化循环，我们能够利用多个线程同时执行迭代操作，充分发挥多核处理器的计算能力。这种优化特别适用于具有大规模矩阵的LU分解操作，因为并行化可以将计算负载分配给多个处理单元，从而加速计算过程。</span></p><p><span>需要注意的是，在使用OpenMP并行化指令时，我们需要考虑共享数据的访问和可能的竞态条件。如果多个线程同时访问和修改相同的数据，可能会导致错误的结果。在本例中，通过将</span><code>#pragma omp parallel</code><span>放置在两个独立的</span><code>#pragma omp for</code><span>之外，我们确保了每个线程独立地访问和修改数据，避免了竞态条件的问题。</span></p><p><span>通过优化代码，我们能够更好地利用计算资源，提高程序的性能。这对于需要处理大规模数据和复杂计算任务的应用程序尤为重要。然而，要确保正确性，我们需要仔细考虑并行化操作对数据一致性的影响，并确保适当的同步机制和数据访问策略。</span></p><p><span>通过合理地使用并行化技术，我们可以显著提高程序的运行速度，从而更高效地完成计算任务。这为处理大规模数据和复杂计算问题的应用程序提供了有力的工具，促进了科学研究和工程实践的发展。</span></p><footer class="site-footer">
+    <div class="container">
+		<div class="footer-content">
+			<p>© 2023 Lemonorn. All rights reserved.</p>
+			<nav class="footer-links">
+			<a href="https://github.com/linepi">My Github</a>
+			</nav>
+		</div>
+	</div>
+</footer></div></div>
 </body>
 </html>
