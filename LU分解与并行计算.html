@@ -881,7 +881,7 @@ input {
 }
 
  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
-</style><title>LU分解与并行计算</title>
+</style><link rel="shortcut icon" href="/favicon.png" type="image/x-icon" /><title>LU分解与并行计算</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
 <div id='write'  class=''><!--more--><h2 id='介绍'><span>介绍</span></h2><p><span>在线性代数与数值分析中，LU分解是矩阵分解的一种，将一个矩阵分解为一个下三角矩阵和一个上三角矩阵的乘积，有时需要再乘上一个置换矩阵。LU分解可以被视为高斯消元法的矩阵形式。在数值计算上，LU分解经常被用来解线性方程组、且在求逆矩阵和计算行列式中都是一个关键的步骤。</span></p><p><span>LU矩阵分解是一种常用的矩阵分解方法，用于将一个矩阵分解为一个下三角矩阵L和一个上三角矩阵U的乘积。其原理可以简述如下：</span></p><p><span>给定一个n×n的矩阵A，LU分解的目标是找到两个矩阵L和U，使得A = LU。</span></p><ol start='' ><li><p><span>首先，我们将矩阵A写成如下形式：</span></p><p><span>A = [a11  a12  a13 ...  a1n]</span>
